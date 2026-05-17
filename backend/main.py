@@ -11,13 +11,22 @@ from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from .schemas import (
-    AnalyzeRequest, AnalysisResult, AnalysisSession, AnalysisStatus,
-    AnalysisProgress, LogEntry
-)
-from .github_service import fetch_repo_snapshot, GitHubAPIError
-from .bob_service import run_analysis_pipeline
-from .risk_engine import calculate_exploitability_score
+try:
+    from .schemas import (
+        AnalyzeRequest, AnalysisResult, AnalysisSession, AnalysisStatus,
+        AnalysisProgress, LogEntry
+    )
+    from .github_service import fetch_repo_snapshot, GitHubAPIError
+    from .bob_service import run_analysis_pipeline
+    from .risk_engine import calculate_exploitability_score
+except ImportError:
+    from schemas import (
+        AnalyzeRequest, AnalysisResult, AnalysisSession, AnalysisStatus,
+        AnalysisProgress, LogEntry
+    )
+    from github_service import fetch_repo_snapshot, GitHubAPIError
+    from bob_service import run_analysis_pipeline
+    from risk_engine import calculate_exploitability_score
 
 # Configure logging
 logging.basicConfig(

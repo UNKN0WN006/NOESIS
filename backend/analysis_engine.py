@@ -14,6 +14,18 @@ from .schemas import (
 
 logger = logging.getLogger(__name__)
 
+IGNORED_EXTENSIONS = {
+    '.md', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.ico', '.pdf', '.txt',
+    '.map', '.lock', '.css', '.scss', '.sass', '.less', '.html',
+}
+
+IGNORED_FILENAMES = {
+    'package.json', 'package-lock.json', 'yarn.lock', 'pnpm-lock.yaml',
+    'tsconfig.json', 'tsconfig.app.json', 'tsconfig.node.json',
+    'vite.config.js', 'vite.config.ts',
+    'eslint.config.js', 'eslint.config.ts',
+}
+
 
 class AnalysisEngine:
     """
@@ -116,6 +128,9 @@ class AnalysisEngine:
         }
         
         for candidate in candidates:
+            if self._should_skip_file(candidate):
+                continue
+
             candidate_lower = candidate.lower()
             
             # Determine entry point type
@@ -178,7 +193,10 @@ class AnalysisEngine:
         
         # Check for critical file flows
         for crit_file in critical_files[:3]:
-            if any('db' in crit_file.lower() or 'query' in crit_file.lower()):
+            if self._should_skip_file(crit_file):
+                continue
+
+            if 'db' in crit_file.lower() or 'query' in crit_file.lower():
                 flow = DataFlow(
                     source='external_input',
                     sink=crit_file,
@@ -289,6 +307,9 @@ class AnalysisEngine:
             all_files.add(ep.path)
         
         for file_path in all_files:
+            if self._should_skip_file(file_path):
+                continue
+
             score = 20  # baseline
             issues = []
             
@@ -367,6 +388,19 @@ class AnalysisEngine:
             if file_path.endswith(ext):
                 return lang
         return 'Unknown'
+
+    def _should_skip_file(self, file_path: str) -> bool:
+        """Skip generated artifacts and non-source files during scoring."""
+        path_lower = file_path.lower()
+        filename = path_lower.split('/')[-1]
+
+        if filename in IGNORED_FILENAMES:
+            return True
+
+        if any(part in path_lower for part in ['/.next/', '/node_modules/', '/dist/', '/build/', '/coverage/', '/docs/', '/documentation/', '/screenshots/', '/public/', '/assets/']):
+            return True
+
+        return any(path_lower.endswith(ext) for ext in IGNORED_EXTENSIONS)
     
     def _compute_risk_scores(self):
         """Calculate multi-factor risk breakdown."""
