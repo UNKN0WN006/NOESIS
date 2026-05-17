@@ -16,8 +16,8 @@ from .schemas import (
     AnalysisProgress, LogEntry
 )
 from .github_service import fetch_repo_snapshot, GitHubAPIError
-from .bob_service import run_bob_pipeline
-from .risk_engine import compute_exploitability_score
+from .bob_service import run_analysis_pipeline
+from .risk_engine import calculate_exploitability_score
 
 # Configure logging
 logging.basicConfig(
@@ -41,7 +41,7 @@ app.add_middleware(
     allow_headers=['*'],
 )
 
-# In-memory session storage (would use Redis/PostgreSQL in production)
+# In-memory session storage for active analysis state and progress.
 sessions: Dict[str, AnalysisSession] = {}
 
 
@@ -213,13 +213,13 @@ async def _execute_analysis(session_id: str, repo_url: str):
             _add_log(session, 'warn', f'Found {len(critical_files)} sensitive files')
         
         session.progress = 40
-        
+
         # Stage 3: Run architectural analysis pipeline
-        _add_log(session, 'info', 'Running architectural analysis...')
-        
+        _add_log(session, 'info', 'Running analysis pipeline...')
+
         try:
-            analysis_result = run_bob_pipeline(repo_snapshot, session_id, repo_url)
-            _add_log(session, 'info', f'Analysis complete. Score: {analysis_result["score"]}')
+            analysis_result = run_analysis_pipeline(repo_snapshot, session_id, repo_url)
+            _add_log(session, 'info', f'Analysis complete. Score: {analysis_result.get("score")}')
         except Exception as e:
             _add_log(session, 'error', f'Analysis pipeline error: {str(e)}')
             raise

@@ -154,7 +154,7 @@ Analysis logs are written to `bob-exports/` as JSON files:
 ### Current State
 - `AnalysisEngine` provides heuristic-based analysis
 - `BobSession` class ready for SDK integration
-- Mock exports created in `bob-exports/` for demo
+- Session exports created in `bob-exports/` for audit/demo use
 
 ### When Bob SDK Available
 1. Get API credentials from IBM

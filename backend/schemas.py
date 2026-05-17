@@ -1,6 +1,6 @@
 """
 Data models for NOESIS analysis pipeline.
-Pydantic schemas ensure type safety and API contract validation.
+Pydantic schemas define API contracts and serialized analysis shapes.
 """
 
 from pydantic import BaseModel, Field, HttpUrl, validator

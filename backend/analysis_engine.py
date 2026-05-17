@@ -1,6 +1,6 @@
 """
 Core analysis engine: converts repository metadata into security insights.
-Implements heuristic-based analysis ready for IBM Bob integration.
+Implements deterministic heuristic analysis over repository structure.
 """
 
 import logging
@@ -392,7 +392,7 @@ class AnalysisEngine:
         exposure_risk = min(critical_file_count * 15 + 10, 100)
         self.score_breakdown.data_exposure = exposure_risk
         
-        # Dependency risk: placeholder (would require SBOM analysis)
+        # Dependency risk baseline until SBOM/CVE integration is added.
         self.score_breakdown.dependency_risk = 35
     
     def to_dict(self) -> Dict[str, Any]:
