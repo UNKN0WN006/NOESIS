@@ -302,30 +302,6 @@ The backend is architecturally ready for IBM Bob:
 
 ---
 
-## What Judges Should See
-
-When you run this locally:
-
-✅ **Professional UI** — Dark theme, monospace fonts, no "AI-generated" look  
-✅ **Real-time Progress** — Live logs update as analysis runs  
-✅ **Enterprise Report** — 7 sections with scores, risks, actionable fixes  
-✅ **Detailed Scoring** — 5-factor breakdown with rationale  
-✅ **Code Snippets** — Actual remediation examples  
-✅ **Audit Trail** — JSON exports for reproducibility  
-✅ **Production Code** — Type-safe, error-handled, documented  
-
----
-
-## Next Steps
-
-1. **Test end-to-end** (follow instructions above)
-2. **Try different repos** (small ones like `github.com/torvalds/linux/tree/master/fs`)
-3. **Review generated JSON** in `bob-exports/`
-4. **Wire IBM Bob** when SDK is available
-5. **Deploy** to Vercel (frontend) + Railway/Render (backend)
-
----
-
 **Status:** ✅ **READY FOR DEMONSTRATION**
 
 All components are functional, well-documented, and production-quality. The system demonstrates:
