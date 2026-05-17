@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "session_id": "b396961c-73e4-40a0-ace1-8ec28d8d135d",
+    "repo_url": "https://github.com/0dayCTF/0day-Xfinity-Wordlist-Generator",
+    "started_at": "2026-05-17T13:59:59.902457",
+    "completed_at": "2026-05-17T13:59:59.906774",
+    "message_count": 2
+  },
+  "conversation": [
+    {
+      "timestamp": "2026-05-17T13:59:59.902536",
+      "role": "user",
+      "content": "Analyze repository and return structured components"
+    },
+    {
+      "timestamp": "2026-05-17T13:59:59.906348",
+      "role": "bob",
+      "content": "Identified 0 components"
+    }
+  ],
+  "analysis": {
+    "session_id": "b396961c-73e4-40a0-ace1-8ec28d8d135d",
+    "repo_url": "https://github.com/0dayCTF/0day-Xfinity-Wordlist-Generator",
+    "score": 24,
+    "score_breakdown": {
+      "authentication": 20,
+      "authorization": 20,
+      "input_validation": 20,
+      "data_exposure": 39,
+      "dependency_risk": 35
+    },
+    "architecture": [],
+    "entry_points": [],
+    "data_flows": [],
+    "privilege_issues": [],
+    "suggestions": [],
+    "file_risks": [
+      {
+        "path": "xfinity-keyspace.py",
+        "risk_score": 60,
+        "issues": [
+          "Credential storage \u2014 critical exposure risk"
+        ],
+        "severity": "high",
+        "language": "Python"
+      },
+      {
+        "path": "xfinity-keyspace - Reverse.py",
+        "risk_score": 60,
+        "issues": [
+          "Credential storage \u2014 critical exposure risk"
+        ],
+        "severity": "high",
+        "language": "Python"
+      }
+    ],
+    "created_at": "2026-05-17T13:59:59.906708Z"
+  }
+}
