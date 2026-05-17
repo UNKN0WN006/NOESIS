@@ -290,7 +290,7 @@ The backend is architecturally ready for IBM Bob:
 
 1. **BobSession class** handles conversation tracking
 2. **Session export** saves complete analysis record
-3. **Placeholder in bob_service.py** shows where SDK calls go
+3. **Integration point in bob_service.py** shows where SDK calls go
 4. **Error handling** prepared for API failures
 5. **Prompt templates** exist but not yet used
 

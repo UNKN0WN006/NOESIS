@@ -16,7 +16,7 @@ NOESIS follows a **semantic versioning** scheme: `MAJOR.MINOR.PATCH`
 - **v0.1.0** (Initial release for IBM competition)
 
 ### Upcoming Milestones
-- **v0.2.0** — Real IBM Bob integration (currently uses mock analysis)
+- **v0.2.0** — Real IBM Bob integration (currently uses deterministic local analysis)
 - **v0.3.0** — Database persistence (PostgreSQL) for session history
 - **v0.4.0** — Private repository support (GitHub token integration)
 - **v1.0.0** — Production-ready with team collaboration features
@@ -108,7 +108,7 @@ Before each release:
   - Privilege violation detection
   - Refactor suggestions with code snippets
   - File risk index
-- FastAPI backend with mock analysis engine
+- FastAPI backend with deterministic local analysis engine
 - GitHub repository ingestion
 - Bob prompt templates (ready for integration)
 - Bob session export to `bob-exports/`
@@ -116,7 +116,7 @@ Before each release:
 - TypeScript throughout
 
 **Known Limitations:**
-- Mock analysis (IBM Bob not live-wired yet)
+- IBM Bob SDK not live-wired yet (local deterministic engine active)
 - In-memory session storage (no database)
 - Public repositories only
 
@@ -136,7 +136,7 @@ Before each release:
 3. Run frontend build: `npm run build`
 4. Restart backend server
 5. New analyses will use real Bob reasoning
-6. Existing mock analyses are still retrievable
+6. Existing analyses remain retrievable
 
 ---
 

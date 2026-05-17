@@ -147,7 +147,7 @@ NOESIS/
 ├── frontend/              # Next.js frontend
 │   ├── pages/             # Route pages (index, loading, dashboard)
 │   ├── components/        # UI components (ScoreCard, Heatmap, etc.)
-│   ├── lib/               # Utilities and mock data
+│   ├── lib/               # Utilities and sample fallback data
 │   ├── styles/            # Global CSS
 │   ├── package.json
 │   └── tsconfig.json
@@ -196,6 +196,21 @@ NOESIS leverages **IBM Bob** for architectural reasoning:
 
 Each Bob session is timestamped and archived for audit and future re-analysis.
 
+### Run With Local Bob Installed
+
+1. Edit [backend/.env.example](backend/.env.example) into a local .env for backend.
+2. Set Bob mode to CLI and provide the exact command that reads prompt text from stdin and prints JSON.
+3. Start backend and run analysis from frontend.
+
+Recommended environment values:
+- BOB_MODE=cli
+- BOB_CLI_COMMAND=<your bob command>
+
+If your Bob installation exposes HTTP instead of CLI:
+- BOB_MODE=http
+- BOB_API_ENDPOINT=<your Bob endpoint>
+- BOB_API_KEY=<your key if required>
+
 ---
 
 ## Development
@@ -238,7 +253,7 @@ gunicorn -w 4 -b 0.0.0.0:8000 backend.main:app
 
 ## Known Limitations & Future Work
 
-- **Mock analysis fallback**: Currently, if the backend is unavailable, the frontend shows mock data. In production, wire real Bob calls.
+- **Sample analysis fallback**: If the backend is unavailable, the frontend shows deterministic sample data.
 - **No GitHub authentication**: Public repos only; private repos require GitHub token.
 - **Dependency scanning**: Currently partial; extend with SBOM parsing (CycloneDX, SPDX).
 - **Database persistence**: Sessions are in-memory; add PostgreSQL/MongoDB for production.
