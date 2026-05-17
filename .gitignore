@@ -3,6 +3,7 @@ node_modules/
 npm-debug.log
 yarn-error.log
 pnpm-lock.yaml
+ibm_bob/
 
 # Build outputs
 .next/
@@ -44,3 +45,4 @@ htmlcov/
 # Temporary files
 *.tmp
 *.temp
+docs/

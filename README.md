@@ -26,7 +26,8 @@ cd backend
 python -m venv venv
 source venv/bin/activate  # or `venv\Scripts\activate` on Windows
 pip install -r requirements.txt
-python main.py
+cd ..
+python -m backend.main
 ```
 
 Server runs on `http://localhost:8000`.
