@@ -4,6 +4,12 @@
 
 NOESIS is a full-stack application that accepts a GitHub repository URL and delivers a security-focused architectural report. Rather than traditional line-level scanning, NOESIS reasons across the repository structure to identify privilege boundaries, data flow risks, and entry point exposure—then prioritizes remediation with actionable refactor suggestions.
 
+## Live Preview
+
+![NOESIS working preview](working.gif)
+
+The preview above shows the core user flow: paste a repository URL, start analysis, and review the generated risk intelligence dashboard.
+
 ## Quick Start
 
 ### Frontend
