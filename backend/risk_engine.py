@@ -7,7 +7,10 @@ and auditability over opaque model behavior.
 """
 
 from typing import Dict, Any
-from .schemas import ScoreBreakdown
+try:
+    from .schemas import ScoreBreakdown
+except ImportError:
+    from schemas import ScoreBreakdown
 
 
 def calculate_exploitability_score(analysis: Dict[str, Any]) -> int:

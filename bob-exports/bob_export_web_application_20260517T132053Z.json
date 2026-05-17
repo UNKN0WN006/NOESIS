@@ -1,0 +1,303 @@
+{
+  "metadata": {
+    "session_id": "eed70221-3607-4bd5-9b22-e89f3d8cf1cc",
+    "repo_url": "https://github.com/ankitadhara28/web_application",
+    "started_at": "2026-05-17T13:20:53.062755",
+    "completed_at": "2026-05-17T13:20:53.063912",
+    "message_count": 2
+  },
+  "conversation": [
+    {
+      "timestamp": "2026-05-17T13:20:53.062886",
+      "role": "user",
+      "content": "Analyze repository and return structured components"
+    },
+    {
+      "timestamp": "2026-05-17T13:20:53.063719",
+      "role": "bob",
+      "content": "Identified 4 components"
+    }
+  ],
+  "analysis": {
+    "session_id": "eed70221-3607-4bd5-9b22-e89f3d8cf1cc",
+    "repo_url": "https://github.com/ankitadhara28/web_application",
+    "score": 77,
+    "score_breakdown": {
+      "authentication": 95,
+      "authorization": 40,
+      "input_validation": 100,
+      "data_exposure": 75,
+      "dependency_risk": 35
+    },
+    "architecture": [
+      {
+        "name": "auth",
+        "files": [
+          "backend/middleware/authMiddleware.js",
+          "backend/routes/authRoutes.js",
+          "frontend/src/context/AuthContext.jsx"
+        ],
+        "description": "Authentication & Authorization",
+        "risk_level": "critical",
+        "external_interface": false,
+        "depends_on": []
+      },
+      {
+        "name": "database",
+        "files": [
+          "backend/models/Application.js",
+          "backend/models/Job.js",
+          "backend/models/User.js"
+        ],
+        "description": "Data Access & Persistence",
+        "risk_level": "critical",
+        "external_interface": false,
+        "depends_on": []
+      },
+      {
+        "name": "api",
+        "files": [
+          "backend/routes/applicationRoutes.js",
+          "backend/routes/jobRoutes.js"
+        ],
+        "description": "API Routes & Handlers",
+        "risk_level": "high",
+        "external_interface": true,
+        "depends_on": []
+      },
+      {
+        "name": "ui",
+        "files": [
+          "frontend/eslint.config.js",
+          "frontend/src/App.jsx",
+          "frontend/src/components/Navbar.jsx",
+          "frontend/src/main.jsx",
+          "frontend/src/pages/Home.jsx",
+          "frontend/src/pages/Login.jsx",
+          "frontend/src/pages/RecruiterDashboard.jsx",
+          "frontend/src/pages/Register.jsx",
+          "frontend/src/pages/SeekerDashboard.jsx",
+          "frontend/vite.config.js"
+        ],
+        "description": "UI/Frontend Client",
+        "risk_level": "medium",
+        "external_interface": false,
+        "depends_on": []
+      }
+    ],
+    "entry_points": [
+      {
+        "path": "backend/routes/applicationRoutes.js",
+        "handler": "applicationRoutes",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "backend/routes/authRoutes.js",
+        "handler": "authRoutes",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "backend/routes/jobRoutes.js",
+        "handler": "jobRoutes",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "backend/server.js",
+        "handler": "server",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      }
+    ],
+    "data_flows": [
+      {
+        "source": "backend/routes/applicationRoutes.js",
+        "sink": "backend/models/Application.js",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      },
+      {
+        "source": "backend/routes/applicationRoutes.js",
+        "sink": "backend/models/Job.js",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      },
+      {
+        "source": "backend/routes/applicationRoutes.js",
+        "sink": "backend/models/User.js",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      },
+      {
+        "source": "backend/routes/jobRoutes.js",
+        "sink": "backend/models/Application.js",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      },
+      {
+        "source": "backend/routes/jobRoutes.js",
+        "sink": "backend/models/Job.js",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      },
+      {
+        "source": "backend/routes/jobRoutes.js",
+        "sink": "backend/models/User.js",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      }
+    ],
+    "privilege_issues": [
+      {
+        "component": "entry_points",
+        "issue": "3 entry points lack authentication",
+        "severity": "critical",
+        "rationale": "Unauthenticated access to public endpoints enables privilege escalation and unauthorized data access.",
+        "affected_entry_points": [
+          "backend/routes/applicationRoutes.js",
+          "backend/routes/jobRoutes.js",
+          "backend/server.js"
+        ],
+        "remediation_effort": "low"
+      },
+      {
+        "component": "data_access",
+        "issue": "Majority of data flows lack input validation",
+        "severity": "critical",
+        "rationale": "Unvalidated inputs can be exploited for SQL injection, command injection, or other code execution attacks.",
+        "affected_entry_points": [],
+        "remediation_effort": "high"
+      }
+    ],
+    "suggestions": [
+      {
+        "reason": "Unauthenticated entry points expose the application to unauthorized access",
+        "recommendation": "Apply authentication middleware to all public routes; use JWT tokens or OAuth2",
+        "impacted_files": [
+          "backend/routes/applicationRoutes.js",
+          "backend/routes/jobRoutes.js",
+          "backend/server.js"
+        ],
+        "code_example": "@app.get(\"/api/data\")\n@require_auth\ndef get_data(token: str = Header()): ...",
+        "severity": "critical",
+        "effort": "low"
+      },
+      {
+        "reason": "Unvalidated input flows create SQL injection and command injection vectors",
+        "recommendation": "Implement parameterized queries and schema validation at controller boundaries",
+        "impacted_files": [
+          "backend/routes/applicationRoutes.js",
+          "backend/routes/jobRoutes.js"
+        ],
+        "code_example": "# Use ORM:\ndb.session.execute(select(User).where(User.id == int(user_id)))\n# NOT string interpolation",
+        "severity": "critical",
+        "effort": "medium"
+      },
+      {
+        "reason": "2 critical privilege issues detected",
+        "recommendation": "Implement role-based access control (RBAC) with consistent enforcement across all sensitive operations",
+        "impacted_files": [],
+        "code_example": "@app.post(\"/admin/users\")\n@require_role(\"admin\")\ndef create_user(): ...",
+        "severity": "critical",
+        "effort": "high"
+      }
+    ],
+    "file_risks": [
+      {
+        "path": "backend/routes/authRoutes.js",
+        "risk_score": 65,
+        "issues": [
+          "Sensitive administrative or auth-related file"
+        ],
+        "severity": "high",
+        "language": "JavaScript"
+      },
+      {
+        "path": "backend/routes/applicationRoutes.js",
+        "risk_score": 55,
+        "issues": [
+          "Unauthenticated entry point"
+        ],
+        "severity": "medium",
+        "language": "JavaScript"
+      },
+      {
+        "path": "backend/server.js",
+        "risk_score": 55,
+        "issues": [
+          "Unauthenticated entry point"
+        ],
+        "severity": "medium",
+        "language": "JavaScript"
+      },
+      {
+        "path": "backend/routes/jobRoutes.js",
+        "risk_score": 55,
+        "issues": [
+          "Unauthenticated entry point"
+        ],
+        "severity": "medium",
+        "language": "JavaScript"
+      },
+      {
+        "path": "frontend/src/context/AuthContext.jsx",
+        "risk_score": 45,
+        "issues": [
+          "Sensitive administrative or auth-related file"
+        ],
+        "severity": "medium",
+        "language": "Unknown"
+      },
+      {
+        "path": "backend/middleware/authMiddleware.js",
+        "risk_score": 45,
+        "issues": [
+          "Sensitive administrative or auth-related file"
+        ],
+        "severity": "medium",
+        "language": "JavaScript"
+      },
+      {
+        "path": "backend/models/User.js",
+        "risk_score": 20,
+        "issues": [],
+        "severity": "low",
+        "language": "JavaScript"
+      },
+      {
+        "path": "frontend/src/pages/RecruiterDashboard.jsx",
+        "risk_score": 20,
+        "issues": [],
+        "severity": "low",
+        "language": "Unknown"
+      },
+      {
+        "path": "backend/models/Job.js",
+        "risk_score": 20,
+        "issues": [],
+        "severity": "low",
+        "language": "JavaScript"
+      },
+      {
+        "path": "frontend/src/pages/SeekerDashboard.jsx",
+        "risk_score": 20,
+        "issues": [],
+        "severity": "low",
+        "language": "Unknown"
+      }
+    ],
+    "created_at": "2026-05-17T13:20:53.063888Z"
+  }
+}

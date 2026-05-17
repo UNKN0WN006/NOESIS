@@ -297,9 +297,9 @@ if __name__ == '__main__':
     host = os.getenv('HOST', '0.0.0.0')
     
     uvicorn.run(
-        'backend.main:app',
+        app,
         host=host,
         port=port,
-        reload=os.getenv('ENV') == 'development',
+        reload=False,  # Disable reload when running directly
         log_level='info',
     )

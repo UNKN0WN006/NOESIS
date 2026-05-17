@@ -7,10 +7,16 @@ import logging
 from typing import Dict, Any, List, Tuple
 from datetime import datetime
 
-from .schemas import (
-    ArchitectureComponent, EntryPoint, DataFlow, PrivilegeIssue,
-    RefactorSuggestion, FileRisk, RiskLevel, ScoreBreakdown
-)
+try:
+    from .schemas import (
+        ArchitectureComponent, EntryPoint, DataFlow, PrivilegeIssue,
+        RefactorSuggestion, FileRisk, RiskLevel, ScoreBreakdown
+    )
+except ImportError:
+    from schemas import (
+        ArchitectureComponent, EntryPoint, DataFlow, PrivilegeIssue,
+        RefactorSuggestion, FileRisk, RiskLevel, ScoreBreakdown
+    )
 
 logger = logging.getLogger(__name__)
 

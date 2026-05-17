@@ -15,9 +15,14 @@ from typing import Dict, Any
 
 import requests
 
-from .analysis_engine import AnalysisEngine
-from .risk_engine import calculate_score_breakdown, calculate_exploitability_score
-from .prompt_templates import PROMPTS
+try:
+    from .analysis_engine import AnalysisEngine
+    from .risk_engine import calculate_score_breakdown, calculate_exploitability_score
+    from .prompt_templates import PROMPTS
+except ImportError:
+    from analysis_engine import AnalysisEngine
+    from risk_engine import calculate_score_breakdown, calculate_exploitability_score
+    from prompt_templates import PROMPTS
 
 logger = logging.getLogger(__name__)
 
