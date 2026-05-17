@@ -1,0 +1,316 @@
+{
+  "architecture": [
+    {
+      "name": "backend_api",
+      "files": ["backend/main.py", "backend/schemas.py", "backend/analysis_engine.py", "backend/risk_engine.py", "backend/bob_service.py", "backend/github_service.py"],
+      "desc": "FastAPI backend server handling analysis orchestration, session management, and API endpoints",
+      "risk_level": "high"
+    },
+    {
+      "name": "frontend_nextjs",
+      "files": ["frontend/pages/index.tsx", "frontend/pages/dashboard.tsx", "frontend/pages/loading.tsx", "frontend/pages/api/analysis.ts"],
+      "desc": "Next.js frontend with API proxy and client-side rendering",
+      "risk_level": "medium"
+    },
+    {
+      "name": "analysis_engine",
+      "files": ["backend/analysis_engine.py", "backend/risk_engine.py", "backend/prompt_templates.py"],
+      "desc": "Core security analysis logic with heuristic-based risk detection",
+      "risk_level": "medium"
+    },
+    {
+      "name": "external_integrations",
+      "files": ["backend/github_service.py", "backend/bob_service.py"],
+      "desc": "External API integrations for GitHub and IBM Bob services",
+      "risk_level": "critical"
+    }
+  ],
+  "entry_points": [
+    {
+      "path": "/api/analyze",
+      "handler": "initiate_analysis",
+      "auth": null,
+      "risk_level": "critical"
+    },
+    {
+      "path": "/api/analyze/{session_id}/progress",
+      "handler": "get_analysis_progress",
+      "auth": null,
+      "risk_level": "high"
+    },
+    {
+      "path": "/api/analyze/{session_id}/result",
+      "handler": "get_analysis_result",
+      "auth": null,
+      "risk_level": "critical"
+    },
+    {
+      "path": "/api/health",
+      "handler": "health_check",
+      "auth": null,
+      "risk_level": "low"
+    },
+    {
+      "path": "/api/analysis (Next.js proxy)",
+      "handler": "frontend API proxy",
+      "auth": null,
+      "risk_level": "high"
+    }
+  ],
+  "data_flows": [
+    {
+      "from": "User input (repo_url)",
+      "to": "GitHub API via github_service.py",
+      "validation": true,
+      "risk_level": "medium"
+    },
+    {
+      "from": "GitHub API response",
+      "to": "In-memory session storage (sessions dict)",
+      "validation": false,
+      "risk_level": "high"
+    },
+    {
+      "from": "Repository snapshot",
+      "to": "Bob service (CLI/HTTP/local)",
+      "validation": false,
+      "risk_level": "critical"
+    },
+    {
+      "from": "Analysis results",
+      "to": "File system (bob-exports/)",
+      "validation": false,
+      "risk_level": "medium"
+    },
+    {
+      "from": "Frontend API proxy",
+      "to": "Backend FastAPI",
+      "validation": true,
+      "risk_level": "medium"
+    },
+    {
+      "from": "Session storage (browser)",
+      "to": "Dashboard rendering",
+      "validation": false,
+      "risk_level": "low"
+    }
+  ],
+  "privilege_issues": [
+    {
+      "component": "API endpoints",
+      "issue": "All API endpoints lack authentication and authorization",
+      "severity": "critical",
+      "rationale": "Any user can initiate analysis, access session data, and retrieve results without authentication. This enables unauthorized resource consumption, data exposure, and potential DoS attacks."
+    },
+    {
+      "component": "Session management",
+      "issue": "In-memory session storage without access control",
+      "severity": "critical",
+      "rationale": "Sessions are stored in a global dictionary accessible by session_id only. No user binding or access control exists, allowing any user to access any session's data including sensitive repository information."
+    },
+    {
+      "component": "GitHub API integration",
+      "issue": "Optional GitHub token with no validation or rate limiting",
+      "severity": "high",
+      "rationale": "GitHub token is optional and not validated. No rate limiting exists, enabling abuse of GitHub API quotas and potential token leakage through error messages."
+    },
+    {
+      "component": "Bob service integration",
+      "issue": "Arbitrary command execution via BOB_CLI_COMMAND",
+      "severity": "critical",
+      "rationale": "BOB_CLI_COMMAND environment variable is executed via subprocess with user-controlled input (repository snapshot). This creates command injection vectors if the environment is compromised."
+    },
+    {
+      "component": "CORS configuration",
+      "issue": "Wildcard CORS allows any origin",
+      "severity": "high",
+      "rationale": "allow_origins=['*'] permits any website to make requests to the API, enabling CSRF attacks and unauthorized data access from malicious sites."
+    },
+    {
+      "component": "File system operations",
+      "issue": "Unvalidated file path construction in bob-exports",
+      "severity": "medium",
+      "rationale": "Export file paths are constructed from repo_url without sanitization, potentially enabling path traversal if repo_url contains malicious characters."
+    }
+  ],
+  "suggestions": [
+    {
+      "why": "All API endpoints are completely unauthenticated, allowing anyone to consume resources and access sensitive data",
+      "fix": "Implement API key authentication or JWT-based auth for all endpoints. Add rate limiting per API key/IP address.",
+      "files": ["backend/main.py"],
+      "code_snippet": "from fastapi import Security, HTTPException\nfrom fastapi.security import APIKeyHeader\n\napi_key_header = APIKeyHeader(name='X-API-Key')\n\nasync def verify_api_key(api_key: str = Security(api_key_header)):\n    if api_key not in valid_api_keys:\n        raise HTTPException(status_code=403, detail='Invalid API key')\n    return api_key\n\n@app.post('/api/analyze', dependencies=[Depends(verify_api_key)])",
+      "severity": "critical",
+      "effort": "medium"
+    },
+    {
+      "why": "Session data is globally accessible without user binding, enabling unauthorized access to analysis results",
+      "fix": "Bind sessions to authenticated users and implement access control checks. Use database with proper indexing instead of in-memory dict.",
+      "files": ["backend/main.py"],
+      "code_snippet": "# Add user_id to session model\nclass AnalysisSession(BaseModel):\n    user_id: str\n    session_id: str\n    # ...\n\n# Verify ownership before access\ndef verify_session_access(session_id: str, user_id: str):\n    session = sessions.get(session_id)\n    if not session or session.user_id != user_id:\n        raise HTTPException(status_code=403, detail='Access denied')",
+      "severity": "critical",
+      "effort": "high"
+    },
+    {
+      "why": "CORS wildcard allows any origin to make requests, enabling CSRF and data theft",
+      "fix": "Restrict CORS to specific trusted origins. Use environment variable for allowed origins list.",
+      "files": ["backend/main.py"],
+      "code_snippet": "allowed_origins = os.getenv('ALLOWED_ORIGINS', 'http://localhost:3000').split(',')\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=allowed_origins,\n    allow_credentials=True,\n    allow_methods=['GET', 'POST'],\n    allow_headers=['Content-Type', 'Authorization'],\n)",
+      "severity": "high",
+      "effort": "low"
+    },
+    {
+      "why": "BOB_CLI_COMMAND enables arbitrary command execution if environment is compromised",
+      "fix": "Validate and sanitize BOB_CLI_COMMAND. Use allowlist of permitted commands. Avoid passing untrusted data to subprocess.",
+      "files": ["backend/bob_service.py"],
+      "code_snippet": "ALLOWED_BOB_COMMANDS = ['bob', '/usr/local/bin/bob']\n\ndef _run_bob_via_cli(prompt: str) -> Dict[str, Any]:\n    command_text = os.getenv('BOB_CLI_COMMAND', 'bob')\n    if command_text not in ALLOWED_BOB_COMMANDS:\n        raise ValueError(f'BOB_CLI_COMMAND not in allowlist: {command_text}')\n    # Use list form to prevent shell injection\n    command = [command_text, 'analyze', '--json']",
+      "severity": "critical",
+      "effort": "medium"
+    },
+    {
+      "why": "GitHub token and API credentials may be exposed in logs or error messages",
+      "fix": "Implement secure credential management. Never log tokens. Use secret management service.",
+      "files": ["backend/github_service.py", "backend/bob_service.py"],
+      "code_snippet": "# Redact sensitive data in logs\nimport re\n\ndef sanitize_log(message: str) -> str:\n    # Redact tokens, keys, passwords\n    patterns = [\n        (r'token[=:]\\s*[\\w-]+', 'token=***'),\n        (r'key[=:]\\s*[\\w-]+', 'key=***'),\n        (r'Authorization:\\s*Bearer\\s+[\\w-]+', 'Authorization: Bearer ***'),\n    ]\n    for pattern, replacement in patterns:\n        message = re.sub(pattern, replacement, message, flags=re.IGNORECASE)\n    return message",
+      "severity": "high",
+      "effort": "low"
+    },
+    {
+      "why": "File path construction from user input enables potential path traversal attacks",
+      "fix": "Sanitize repo_url before using in file paths. Use secure path joining and validate output paths.",
+      "files": ["backend/bob_service.py"],
+      "code_snippet": "import os\nfrom pathlib import Path\n\ndef sanitize_filename(name: str) -> str:\n    # Remove path separators and dangerous characters\n    return re.sub(r'[^a-zA-Z0-9_-]', '_', name)\n\ndef export_to_file(self, analysis_result: Dict[str, Any]) -> str:\n    repo_name = sanitize_filename(self.repo_url.split('/')[-1].replace('.git', ''))\n    timestamp = self.started_at.strftime('%Y%m%dT%H%M%SZ')\n    filename = f'bob_export_{repo_name}_{timestamp}.json'\n    filepath = Path(EXPORT_DIR) / filename\n    # Verify path is within EXPORT_DIR\n    if not filepath.resolve().is_relative_to(Path(EXPORT_DIR).resolve()):\n        raise ValueError('Invalid export path')",
+      "severity": "medium",
+      "effort": "low"
+    },
+    {
+      "why": "No input validation on repo_url beyond basic GitHub URL check",
+      "fix": "Implement comprehensive URL validation, sanitization, and allowlist/blocklist for repositories.",
+      "files": ["backend/schemas.py", "backend/github_service.py"],
+      "code_snippet": "@validator('repo_url')\ndef validate_github_url(cls, v):\n    url_str = str(v)\n    if 'github.com' not in url_str:\n        raise ValueError('Must be a GitHub repository URL')\n    # Validate format\n    if not re.match(r'^https://github\\.com/[\\w-]+/[\\w.-]+/?$', url_str):\n        raise ValueError('Invalid GitHub URL format')\n    # Check against blocklist\n    if any(blocked in url_str.lower() for blocked in BLOCKED_REPOS):\n        raise ValueError('Repository is blocked')\n    return v",
+      "severity": "high",
+      "effort": "low"
+    },
+    {
+      "why": "No rate limiting enables DoS attacks and resource exhaustion",
+      "fix": "Implement rate limiting per IP/API key using middleware or Redis-based solution.",
+      "files": ["backend/main.py"],
+      "code_snippet": "from slowapi import Limiter, _rate_limit_exceeded_handler\nfrom slowapi.util import get_remote_address\nfrom slowapi.errors import RateLimitExceeded\n\nlimiter = Limiter(key_func=get_remote_address)\napp.state.limiter = limiter\napp.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)\n\n@app.post('/api/analyze')\n@limiter.limit('5/minute')\nasync def initiate_analysis(request: Request, ...):",
+      "severity": "high",
+      "effort": "medium"
+    }
+  ],
+  "file_risks": [
+    {
+      "path": "backend/main.py",
+      "risk_score": 85,
+      "issues": [
+        "No authentication on any endpoint",
+        "CORS wildcard allows any origin",
+        "In-memory session storage without access control",
+        "No rate limiting",
+        "Sensitive data in logs"
+      ],
+      "severity": "critical"
+    },
+    {
+      "path": "backend/bob_service.py",
+      "risk_score": 90,
+      "issues": [
+        "Arbitrary command execution via BOB_CLI_COMMAND",
+        "Subprocess with user-controlled input",
+        "Unvalidated file path construction",
+        "No sanitization of repository snapshot data",
+        "Potential command injection vectors"
+      ],
+      "severity": "critical"
+    },
+    {
+      "path": "backend/github_service.py",
+      "risk_score": 75,
+      "issues": [
+        "Optional GitHub token without validation",
+        "No rate limiting on GitHub API calls",
+        "Potential token leakage in error messages",
+        "Unvalidated URL parsing",
+        "No timeout protection on API calls"
+      ],
+      "severity": "high"
+    },
+    {
+      "path": "backend/schemas.py",
+      "risk_score": 60,
+      "issues": [
+        "Weak URL validation (only checks for 'github.com')",
+        "No input sanitization",
+        "Missing field-level validation",
+        "No maximum length constraints"
+      ],
+      "severity": "high"
+    },
+    {
+      "path": "frontend/pages/api/analysis.ts",
+      "risk_score": 70,
+      "issues": [
+        "No authentication on proxy endpoint",
+        "Forwards all requests without validation",
+        "Exposes backend errors to client",
+        "No rate limiting",
+        "SSRF potential via backend URL"
+      ],
+      "severity": "high"
+    },
+    {
+      "path": "backend/analysis_engine.py",
+      "risk_score": 55,
+      "issues": [
+        "Heuristic-based analysis may miss vulnerabilities",
+        "No validation of input data structure",
+        "Potential for logic bypass",
+        "Deterministic scoring may be predictable"
+      ],
+      "severity": "medium"
+    },
+    {
+      "path": "backend/risk_engine.py",
+      "risk_score": 45,
+      "issues": [
+        "Simple scoring algorithm may be gamed",
+        "No machine learning or advanced detection",
+        "Fixed weights may not reflect real-world risk"
+      ],
+      "severity": "medium"
+    },
+    {
+      "path": "backend/.env.example",
+      "risk_score": 65,
+      "issues": [
+        "Contains sensitive configuration patterns",
+        "No guidance on secure values",
+        "BOB_MODE=local may bypass security",
+        "Missing security-related environment variables"
+      ],
+      "severity": "medium"
+    },
+    {
+      "path": "frontend/pages/dashboard.tsx",
+      "risk_score": 50,
+      "issues": [
+        "Uses sessionStorage for sensitive data",
+        "No data validation before rendering",
+        "XSS potential if data not sanitized",
+        "Fallback to sample data may leak patterns"
+      ],
+      "severity": "medium"
+    },
+    {
+      "path": "backend/prompt_templates.py",
+      "risk_score": 40,
+      "issues": [
+        "Prompt injection potential if templates modified",
+        "No validation of prompt output",
+        "May expose internal logic to Bob service"
+      ],
+      "severity": "low"
+    }
+  ]
+}

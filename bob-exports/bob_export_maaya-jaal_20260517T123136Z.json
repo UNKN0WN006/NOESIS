@@ -1,0 +1,209 @@
+{
+  "metadata": {
+    "session_id": "23871695-8ebe-41e8-9bcf-d86282565508",
+    "repo_url": "https://github.com/UNKN0WN006/maaya-jaal",
+    "started_at": "2026-05-17T12:31:36.195812",
+    "completed_at": "2026-05-17T12:31:36.197025",
+    "message_count": 2
+  },
+  "conversation": [
+    {
+      "timestamp": "2026-05-17T12:31:36.195885",
+      "role": "user",
+      "content": "Analyze repository and return structured components"
+    },
+    {
+      "timestamp": "2026-05-17T12:31:36.196786",
+      "role": "bob",
+      "content": "Identified 4 components"
+    }
+  ],
+  "analysis": {
+    "session_id": "23871695-8ebe-41e8-9bcf-d86282565508",
+    "repo_url": "https://github.com/UNKN0WN006/maaya-jaal",
+    "score": 68,
+    "score_breakdown": {
+      "authentication": 100,
+      "authorization": 60,
+      "input_validation": 20,
+      "data_exposure": 100,
+      "dependency_risk": 35
+    },
+    "architecture": [
+      {
+        "name": "ui",
+        "files": [
+          "src/components/AlertsPanel.tsx",
+          "src/components/AttackTimeline.tsx",
+          "src/components/AttackTypesChart.tsx",
+          "src/components/Dashboard.tsx",
+          "src/components/DataInitializer.tsx",
+          "src/components/GeographicMap.tsx",
+          "src/components/StatCard.tsx",
+          "src/components/TopCommands.tsx"
+        ],
+        "description": "UI/Frontend Client",
+        "risk_level": "medium",
+        "external_interface": false,
+        "depends_on": []
+      },
+      {
+        "name": "auth",
+        "files": [
+          "src/components/RecentSessions.tsx"
+        ],
+        "description": "Authentication & Authorization",
+        "risk_level": "critical",
+        "external_interface": false,
+        "depends_on": []
+      },
+      {
+        "name": "admin",
+        "files": [
+          "src/lib/dataManagement.ts"
+        ],
+        "description": "Admin Panel & Management",
+        "risk_level": "critical",
+        "external_interface": true,
+        "depends_on": []
+      },
+      {
+        "name": "database",
+        "files": [
+          "supabase/migrations/20260312033020_create_honeypot_schema.sql"
+        ],
+        "description": "Data Access & Persistence",
+        "risk_level": "critical",
+        "external_interface": false,
+        "depends_on": []
+      }
+    ],
+    "entry_points": [
+      {
+        "path": "src/main.tsx",
+        "handler": "main.tsx",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      }
+    ],
+    "data_flows": [],
+    "privilege_issues": [
+      {
+        "component": "entry_points",
+        "issue": "1 entry points lack authentication",
+        "severity": "critical",
+        "rationale": "Unauthenticated access to public endpoints enables privilege escalation and unauthorized data access.",
+        "affected_entry_points": [
+          "src/main.tsx"
+        ],
+        "remediation_effort": "low"
+      },
+      {
+        "component": "admin",
+        "issue": "Admin interface uses non-standard authentication",
+        "severity": "high",
+        "rationale": "Inconsistent authentication across admin endpoints may allow attackers to bypass access controls.",
+        "affected_entry_points": [],
+        "remediation_effort": "medium"
+      }
+    ],
+    "suggestions": [
+      {
+        "reason": "Unauthenticated entry points expose the application to unauthorized access",
+        "recommendation": "Apply authentication middleware to all public routes; use JWT tokens or OAuth2",
+        "impacted_files": [
+          "src/main.tsx"
+        ],
+        "code_example": "@app.get(\"/api/data\")\n@require_auth\ndef get_data(token: str = Header()): ...",
+        "severity": "critical",
+        "effort": "low"
+      },
+      {
+        "reason": "1 critical privilege issues detected",
+        "recommendation": "Implement role-based access control (RBAC) with consistent enforcement across all sensitive operations",
+        "impacted_files": [],
+        "code_example": "@app.post(\"/admin/users\")\n@require_role(\"admin\")\ndef create_user(): ...",
+        "severity": "critical",
+        "effort": "high"
+      }
+    ],
+    "file_risks": [
+      {
+        "path": "src/main.tsx",
+        "risk_score": 55,
+        "issues": [
+          "Unauthenticated entry point"
+        ],
+        "severity": "medium",
+        "language": "Unknown"
+      },
+      {
+        "path": "supabase/migrations/20260312033020_create_honeypot_schema.sql",
+        "risk_score": 50,
+        "issues": [
+          "Data access layer \u2014 high impact if compromised"
+        ],
+        "severity": "medium",
+        "language": "Unknown"
+      },
+      {
+        "path": "src/components/Dashboard.tsx",
+        "risk_score": 20,
+        "issues": [],
+        "severity": "low",
+        "language": "Unknown"
+      },
+      {
+        "path": "src/vite-env.d.ts",
+        "risk_score": 20,
+        "issues": [],
+        "severity": "low",
+        "language": "TypeScript"
+      },
+      {
+        "path": "src/components/TopCommands.tsx",
+        "risk_score": 20,
+        "issues": [],
+        "severity": "low",
+        "language": "Unknown"
+      },
+      {
+        "path": "src/components/AttackTimeline.tsx",
+        "risk_score": 20,
+        "issues": [],
+        "severity": "low",
+        "language": "Unknown"
+      },
+      {
+        "path": "tsconfig.json",
+        "risk_score": 20,
+        "issues": [],
+        "severity": "low",
+        "language": "Unknown"
+      },
+      {
+        "path": "vite.config.ts",
+        "risk_score": 20,
+        "issues": [],
+        "severity": "low",
+        "language": "TypeScript"
+      },
+      {
+        "path": "tsconfig.app.json",
+        "risk_score": 20,
+        "issues": [],
+        "severity": "low",
+        "language": "Unknown"
+      },
+      {
+        "path": "src/components/RecentSessions.tsx",
+        "risk_score": 20,
+        "issues": [],
+        "severity": "low",
+        "language": "Unknown"
+      }
+    ],
+    "created_at": "2026-05-17T12:31:36.196982Z"
+  }
+}

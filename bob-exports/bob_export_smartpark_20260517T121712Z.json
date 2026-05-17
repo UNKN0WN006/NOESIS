@@ -1,0 +1,3739 @@
+{
+  "metadata": {
+    "session_id": "d737024b-0df8-458d-821d-ff01fc768a5c",
+    "repo_url": "https://github.com/UNKN0WN006/smartpark",
+    "started_at": "2026-05-17T12:17:12.214757",
+    "completed_at": "2026-05-17T12:17:12.233049",
+    "message_count": 2
+  },
+  "conversation": [
+    {
+      "timestamp": "2026-05-17T12:17:12.214818",
+      "role": "user",
+      "content": "Analyze repository and return structured components"
+    },
+    {
+      "timestamp": "2026-05-17T12:17:12.232783",
+      "role": "bob",
+      "content": "Identified 5 components"
+    }
+  ],
+  "analysis": {
+    "session_id": "d737024b-0df8-458d-821d-ff01fc768a5c",
+    "repo_url": "https://github.com/UNKN0WN006/smartpark",
+    "score": 83,
+    "score_breakdown": {
+      "authentication": 100,
+      "authorization": 40,
+      "input_validation": 100,
+      "data_exposure": 100,
+      "dependency_risk": 35
+    },
+    "architecture": [
+      {
+        "name": "api",
+        "files": [
+          "smartpark/.next/app-path-routes-manifest.json",
+          "smartpark/.next/dev/routes-manifest.json",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_server_route-modules_app-page_0f6k0sl._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_server_route-modules_app-page_0f6k0sl._.js.map",
+          "smartpark/.next/dev/server/interception-route-rewrite-manifest.js",
+          "smartpark/.next/dev/types/routes.d.ts",
+          "smartpark/.next/server/app/api/(admin)/config/route.js",
+          "smartpark/.next/server/app/api/(admin)/config/route.js.map",
+          "smartpark/.next/server/app/api/(admin)/config/route.js.nft.json",
+          "smartpark/.next/server/app/api/(admin)/config/route/app-paths-manifest.json"
+        ],
+        "description": "API Routes & Handlers",
+        "risk_level": "critical",
+        "external_interface": true,
+        "depends_on": []
+      },
+      {
+        "name": "ui",
+        "files": [
+          "smartpark/.next/build-manifest.json",
+          "smartpark/.next/build/chunks/[root-of-the-server]__0d-m0h0._.js",
+          "smartpark/.next/build/chunks/[root-of-the-server]__0d-m0h0._.js.map",
+          "smartpark/.next/build/chunks/[root-of-the-server]__0ubbtyl._.js",
+          "smartpark/.next/build/chunks/[root-of-the-server]__0ubbtyl._.js.map",
+          "smartpark/.next/build/chunks/[turbopack-node]_transforms_postcss_ts_06e.r3r._.js",
+          "smartpark/.next/build/chunks/[turbopack-node]_transforms_postcss_ts_06e.r3r._.js.map",
+          "smartpark/.next/build/chunks/[turbopack]_runtime.js",
+          "smartpark/.next/build/chunks/[turbopack]_runtime.js.map",
+          "smartpark/.next/build/chunks/node_modules_13sb.px._.js"
+        ],
+        "description": "UI/Frontend Client",
+        "risk_level": "medium",
+        "external_interface": false,
+        "depends_on": []
+      },
+      {
+        "name": "external",
+        "files": [
+          "smartpark/.next/dev/server/chunks/ssr/[externals]__0n13xf4._.js",
+          "smartpark/.next/dev/server/chunks/ssr/[externals]__0n13xf4._.js.map",
+          "smartpark/.next/server/chunks/[externals]_next_dist_0arv.vj._.js",
+          "smartpark/.next/server/chunks/[externals]_next_dist_0arv.vj._.js.map"
+        ],
+        "description": "External Integrations",
+        "risk_level": "high",
+        "external_interface": true,
+        "depends_on": []
+      },
+      {
+        "name": "auth",
+        "files": [
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23.js.map",
+          "smartpark/.next/server/app/(auth)/login/page.js",
+          "smartpark/.next/server/app/(auth)/login/page.js.map",
+          "smartpark/.next/server/app/(auth)/login/page.js.nft.json",
+          "smartpark/.next/server/app/(auth)/login/page/app-paths-manifest.json",
+          "smartpark/.next/server/app/(auth)/login/page/build-manifest.json",
+          "smartpark/.next/server/app/(auth)/login/page/next-font-manifest.json",
+          "smartpark/.next/server/app/(auth)/login/page/react-loadable-manifest.json",
+          "smartpark/.next/server/app/(auth)/login/page/server-reference-manifest.json"
+        ],
+        "description": "Authentication & Authorization",
+        "risk_level": "critical",
+        "external_interface": false,
+        "depends_on": []
+      },
+      {
+        "name": "database",
+        "files": [
+          "smartpark/lib/db.ts",
+          "smartpark/models/ParkingSlot.ts",
+          "smartpark/models/SystemConfig.ts",
+          "smartpark/models/Ticket.ts",
+          "smartpark/models/User.ts"
+        ],
+        "description": "Data Access & Persistence",
+        "risk_level": "critical",
+        "external_interface": false,
+        "depends_on": []
+      }
+    ],
+    "entry_points": [
+      {
+        "path": "smartpark/.next/app-path-routes-manifest.json",
+        "handler": "app-path-routes-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/build/chunks/[root-of-the-server]__0d-m0h0._.js",
+        "handler": "[root-of-the-server]__0d-m0h0._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/build/chunks/[root-of-the-server]__0d-m0h0._.js.map",
+        "handler": "[root-of-the-server]__0d-m0h0._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/build/chunks/[root-of-the-server]__0ubbtyl._.js",
+        "handler": "[root-of-the-server]__0ubbtyl._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/build/chunks/[root-of-the-server]__0ubbtyl._.js.map",
+        "handler": "[root-of-the-server]__0ubbtyl._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/build/chunks/[root-of-the-server]__0d-m0h0._.js",
+        "handler": "[root-of-the-server]__0d-m0h0._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/build/chunks/[root-of-the-server]__0d-m0h0._.js.map",
+        "handler": "[root-of-the-server]__0d-m0h0._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/build/chunks/[root-of-the-server]__0ubbtyl._.js",
+        "handler": "[root-of-the-server]__0ubbtyl._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/build/chunks/[root-of-the-server]__0ubbtyl._.js.map",
+        "handler": "[root-of-the-server]__0ubbtyl._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/routes-manifest.json",
+        "handler": "routes-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/app/(site)/page.js",
+        "handler": "page",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/app/(site)/page.js.map",
+        "handler": "page.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/app/(site)/page/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/app/(site)/page/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/app/(site)/page/next-font-manifest.json",
+        "handler": "next-font-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/app/(site)/page/react-loadable-manifest.json",
+        "handler": "react-loadable-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/app/(site)/page/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/app/(site)/page_client-reference-manifest.js",
+        "handler": "page_client-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/[externals]__0n13xf4._.js",
+        "handler": "[externals]__0n13xf4._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/[externals]__0n13xf4._.js.map",
+        "handler": "[externals]__0n13xf4._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__01jlcs9._.js",
+        "handler": "[root-of-the-server]__01jlcs9._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__01jlcs9._.js.map",
+        "handler": "[root-of-the-server]__01jlcs9._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__055e8xb._.js",
+        "handler": "[root-of-the-server]__055e8xb._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__055e8xb._.js.map",
+        "handler": "[root-of-the-server]__055e8xb._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__05d-gx8._.js",
+        "handler": "[root-of-the-server]__05d-gx8._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__05d-gx8._.js.map",
+        "handler": "[root-of-the-server]__05d-gx8._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/[turbopack]_runtime.js",
+        "handler": "[turbopack]_runtime",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/[turbopack]_runtime.js.map",
+        "handler": "[turbopack]_runtime.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/_next-internal_server_app_(site)_page_actions_00k8kul.js",
+        "handler": "_next-internal_server_app_(site)_page_actions_00k8kul",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/_next-internal_server_app_(site)_page_actions_00k8kul.js.map",
+        "handler": "_next-internal_server_app_(site)_page_actions_00k8kul.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/app_(site)_page_tsx_11ocld5._.js",
+        "handler": "app_(site)_page_tsx_11ocld5._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/app_(site)_page_tsx_11ocld5._.js.map",
+        "handler": "app_(site)_page_tsx_11ocld5._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_09w7yel._.js",
+        "handler": "node_modules_09w7yel._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_09w7yel._.js.map",
+        "handler": "node_modules_09w7yel._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_0_socv7._.js",
+        "handler": "node_modules_0_socv7._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_0_socv7._.js.map",
+        "handler": "node_modules_0_socv7._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_@swc_helpers_cjs__interop_require_wildcard_cjs_0gn4jlg._.js",
+        "handler": "node_modules_@swc_helpers_cjs__interop_require_wildcard_cjs_0gn4jlg._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_@swc_helpers_cjs__interop_require_wildcard_cjs_0gn4jlg._.js.map",
+        "handler": "node_modules_@swc_helpers_cjs__interop_require_wildcard_cjs_0gn4jlg._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_lucide-react_dist_esm_03jbwt4._.js",
+        "handler": "node_modules_lucide-react_dist_esm_03jbwt4._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_lucide-react_dist_esm_03jbwt4._.js.map",
+        "handler": "node_modules_lucide-react_dist_esm_03jbwt4._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_11b4uhw._.js",
+        "handler": "node_modules_next_dist_11b4uhw._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_11b4uhw._.js.map",
+        "handler": "node_modules_next_dist_11b4uhw._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_0.p0.cy._.js",
+        "handler": "node_modules_next_dist_client_0.p0.cy._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_0.p0.cy._.js.map",
+        "handler": "node_modules_next_dist_client_0.p0.cy._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js",
+        "handler": "node_modules_next_dist_client_components_0inhx6q._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js.map",
+        "handler": "node_modules_next_dist_client_components_0inhx6q._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js",
+        "handler": "node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js.map",
+        "handler": "node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js",
+        "handler": "node_modules_next_dist_client_components_builtin_global-error_0lgvd_.",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js.map",
+        "handler": "node_modules_next_dist_client_components_builtin_global-error_0lgvd_..map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23.js",
+        "handler": "node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23.js.map",
+        "handler": "node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23.map",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_compiled_07ho8ku._.js",
+        "handler": "node_modules_next_dist_compiled_07ho8ku._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_compiled_07ho8ku._.js.map",
+        "handler": "node_modules_next_dist_compiled_07ho8ku._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_esm_00xse_0._.js",
+        "handler": "node_modules_next_dist_esm_00xse_0._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_esm_00xse_0._.js.map",
+        "handler": "node_modules_next_dist_esm_00xse_0._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_esm_0cqcg00._.js",
+        "handler": "node_modules_next_dist_esm_0cqcg00._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_esm_0cqcg00._.js.map",
+        "handler": "node_modules_next_dist_esm_0cqcg00._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_server_route-modules_app-page_0f6k0sl._.js",
+        "handler": "node_modules_next_dist_server_route-modules_app-page_0f6k0sl._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_server_route-modules_app-page_0f6k0sl._.js.map",
+        "handler": "node_modules_next_dist_server_route-modules_app-page_0f6k0sl._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_navigation_08-xh1..js",
+        "handler": "node_modules_next_navigation_08-xh1.",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_navigation_08-xh1..js.map",
+        "handler": "node_modules_next_navigation_08-xh1..map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/interception-route-rewrite-manifest.js",
+        "handler": "interception-route-rewrite-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/middleware-build-manifest.js",
+        "handler": "middleware-build-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/middleware-manifest.json",
+        "handler": "middleware-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/next-font-manifest.js",
+        "handler": "next-font-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/next-font-manifest.json",
+        "handler": "next-font-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/pages-manifest.json",
+        "handler": "pages-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/server-reference-manifest.js",
+        "handler": "server-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/server/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/static/chunks/[root-of-the-server]__0q6rmb6._.css",
+        "handler": "[root-of-the-server]__0q6rmb6._.css",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/static/chunks/[root-of-the-server]__0q6rmb6._.css.map",
+        "handler": "[root-of-the-server]__0q6rmb6._.css.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js",
+        "handler": "node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js.map",
+        "handler": "node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/dev/types/routes.d.ts",
+        "handler": "routes.d.ts",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/next-minimal-server.js.nft.json",
+        "handler": "next-minimal-server.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/next-server.js.nft.json",
+        "handler": "next-server.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/required-server-files.js",
+        "handler": "required-server-files",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/required-server-files.json",
+        "handler": "required-server-fileson",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(admin)/dashboard/page.js",
+        "handler": "page",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(admin)/dashboard/page.js.map",
+        "handler": "page.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(admin)/dashboard/page.js.nft.json",
+        "handler": "page.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(admin)/dashboard/page/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(admin)/dashboard/page/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(admin)/dashboard/page/next-font-manifest.json",
+        "handler": "next-font-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(admin)/dashboard/page/react-loadable-manifest.json",
+        "handler": "react-loadable-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(admin)/dashboard/page/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(admin)/dashboard/page_client-reference-manifest.js",
+        "handler": "page_client-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/login/page.js",
+        "handler": "page",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/login/page.js.map",
+        "handler": "page.map",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/login/page.js.nft.json",
+        "handler": "page.nfton",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/login/page/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/login/page/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/login/page/next-font-manifest.json",
+        "handler": "next-font-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/login/page/react-loadable-manifest.json",
+        "handler": "react-loadable-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/login/page/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/login/page_client-reference-manifest.js",
+        "handler": "page_client-reference-manifest",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/register/page.js",
+        "handler": "page",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/register/page.js.map",
+        "handler": "page.map",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/register/page.js.nft.json",
+        "handler": "page.nfton",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/register/page/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/register/page/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/register/page/next-font-manifest.json",
+        "handler": "next-font-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/register/page/react-loadable-manifest.json",
+        "handler": "react-loadable-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/register/page/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(auth)/register/page_client-reference-manifest.js",
+        "handler": "page_client-reference-manifest",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/entry/page.js",
+        "handler": "page",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/entry/page.js.map",
+        "handler": "page.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/entry/page.js.nft.json",
+        "handler": "page.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/entry/page/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/entry/page/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/entry/page/next-font-manifest.json",
+        "handler": "next-font-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/entry/page/react-loadable-manifest.json",
+        "handler": "react-loadable-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/entry/page/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/entry/page_client-reference-manifest.js",
+        "handler": "page_client-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/exit/page.js",
+        "handler": "page",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/exit/page.js.map",
+        "handler": "page.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/exit/page.js.nft.json",
+        "handler": "page.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/exit/page/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/exit/page/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/exit/page/next-font-manifest.json",
+        "handler": "next-font-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/exit/page/react-loadable-manifest.json",
+        "handler": "react-loadable-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/exit/page/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(parking)/exit/page_client-reference-manifest.js",
+        "handler": "page_client-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(site)/page.js",
+        "handler": "page",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(site)/page.js.map",
+        "handler": "page.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(site)/page.js.nft.json",
+        "handler": "page.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(site)/page/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(site)/page/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(site)/page/next-font-manifest.json",
+        "handler": "next-font-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(site)/page/react-loadable-manifest.json",
+        "handler": "react-loadable-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(site)/page/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/(site)/page_client-reference-manifest.js",
+        "handler": "page_client-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_global-error/page.js",
+        "handler": "page",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_global-error/page.js.map",
+        "handler": "page.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_global-error/page.js.nft.json",
+        "handler": "page.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_global-error/page/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_global-error/page/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_global-error/page/next-font-manifest.json",
+        "handler": "next-font-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_global-error/page/react-loadable-manifest.json",
+        "handler": "react-loadable-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_global-error/page/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_global-error/page_client-reference-manifest.js",
+        "handler": "page_client-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_not-found/page.js",
+        "handler": "page",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_not-found/page.js.map",
+        "handler": "page.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_not-found/page.js.nft.json",
+        "handler": "page.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_not-found/page/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_not-found/page/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_not-found/page/next-font-manifest.json",
+        "handler": "next-font-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_not-found/page/react-loadable-manifest.json",
+        "handler": "react-loadable-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_not-found/page/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/_not-found/page_client-reference-manifest.js",
+        "handler": "page_client-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/config/route.js",
+        "handler": "route",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/config/route.js.map",
+        "handler": "route.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/config/route.js.nft.json",
+        "handler": "route.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/config/route/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/config/route/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/config/route/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/config/route_client-reference-manifest.js",
+        "handler": "route_client-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/dashboard/route.js",
+        "handler": "route",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/dashboard/route.js.map",
+        "handler": "route.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/dashboard/route.js.nft.json",
+        "handler": "route.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/dashboard/route/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/dashboard/route/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/dashboard/route/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/dashboard/route_client-reference-manifest.js",
+        "handler": "route_client-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/tickets/route.js",
+        "handler": "route",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/tickets/route.js.map",
+        "handler": "route.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/tickets/route.js.nft.json",
+        "handler": "route.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/tickets/route/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/tickets/route/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/tickets/route/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/tickets/route_client-reference-manifest.js",
+        "handler": "route_client-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(auth)/login/route.js",
+        "handler": "route",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(auth)/login/route.js.map",
+        "handler": "route.map",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(auth)/login/route.js.nft.json",
+        "handler": "route.nfton",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(auth)/login/route/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(auth)/login/route/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(auth)/login/route/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(auth)/login/route_client-reference-manifest.js",
+        "handler": "route_client-reference-manifest",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(auth)/register/route.js",
+        "handler": "route",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(auth)/register/route.js.map",
+        "handler": "route.map",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(auth)/register/route.js.nft.json",
+        "handler": "route.nfton",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(auth)/register/route/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(auth)/register/route/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(auth)/register/route/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(auth)/register/route_client-reference-manifest.js",
+        "handler": "route_client-reference-manifest",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/entry/route.js",
+        "handler": "route",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/entry/route.js.map",
+        "handler": "route.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/entry/route.js.nft.json",
+        "handler": "route.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/entry/route/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/entry/route/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/entry/route/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/entry/route_client-reference-manifest.js",
+        "handler": "route_client-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/exit/route.js",
+        "handler": "route",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/exit/route.js.map",
+        "handler": "route.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/exit/route.js.nft.json",
+        "handler": "route.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/exit/route/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/exit/route/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/exit/route/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/exit/route_client-reference-manifest.js",
+        "handler": "route_client-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/slots/route.js",
+        "handler": "route",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/slots/route.js.map",
+        "handler": "route.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/slots/route.js.nft.json",
+        "handler": "route.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/slots/route/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/slots/route/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/slots/route/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(parking)/slots/route_client-reference-manifest.js",
+        "handler": "route_client-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(system)/test/route.js",
+        "handler": "route",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(system)/test/route.js.map",
+        "handler": "route.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(system)/test/route.js.nft.json",
+        "handler": "route.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(system)/test/route/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(system)/test/route/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(system)/test/route/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(system)/test/route_client-reference-manifest.js",
+        "handler": "route_client-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/favicon.ico/route.js",
+        "handler": "route",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/favicon.ico/route.js.map",
+        "handler": "route.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/favicon.ico/route.js.nft.json",
+        "handler": "route.nfton",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/favicon.ico/route/app-paths-manifest.json",
+        "handler": "app-paths-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/app/favicon.ico/route/build-manifest.json",
+        "handler": "build-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[externals]_next_dist_0arv.vj._.js",
+        "handler": "[externals]_next_dist_0arv.vj._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[externals]_next_dist_0arv.vj._.js.map",
+        "handler": "[externals]_next_dist_0arv.vj._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__08.91j-._.js",
+        "handler": "[root-of-the-server]__08.91j-._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__08.91j-._.js.map",
+        "handler": "[root-of-the-server]__08.91j-._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__08bvc9k._.js",
+        "handler": "[root-of-the-server]__08bvc9k._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__08bvc9k._.js.map",
+        "handler": "[root-of-the-server]__08bvc9k._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__09_xxhc._.js",
+        "handler": "[root-of-the-server]__09_xxhc._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__09_xxhc._.js.map",
+        "handler": "[root-of-the-server]__09_xxhc._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__0ak-_vm._.js",
+        "handler": "[root-of-the-server]__0ak-_vm._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__0ak-_vm._.js.map",
+        "handler": "[root-of-the-server]__0ak-_vm._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__0f5u7.s._.js",
+        "handler": "[root-of-the-server]__0f5u7.s._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__0f5u7.s._.js.map",
+        "handler": "[root-of-the-server]__0f5u7.s._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__0g-c_1u._.js",
+        "handler": "[root-of-the-server]__0g-c_1u._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__0g-c_1u._.js.map",
+        "handler": "[root-of-the-server]__0g-c_1u._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__0g_ho0i._.js",
+        "handler": "[root-of-the-server]__0g_ho0i._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__0g_ho0i._.js.map",
+        "handler": "[root-of-the-server]__0g_ho0i._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__0h0w.uz._.js",
+        "handler": "[root-of-the-server]__0h0w.uz._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__0h0w.uz._.js.map",
+        "handler": "[root-of-the-server]__0h0w.uz._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__0hywybc._.js",
+        "handler": "[root-of-the-server]__0hywybc._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__0hywybc._.js.map",
+        "handler": "[root-of-the-server]__0hywybc._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__0j8-xkl._.js",
+        "handler": "[root-of-the-server]__0j8-xkl._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[root-of-the-server]__0j8-xkl._.js.map",
+        "handler": "[root-of-the-server]__0j8-xkl._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[turbopack]_runtime.js",
+        "handler": "[turbopack]_runtime",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/[turbopack]_runtime.js.map",
+        "handler": "[turbopack]_runtime.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_12t-czy._.js",
+        "handler": "_12t-czy._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_12t-czy._.js.map",
+        "handler": "_12t-czy._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_config_route_actions_0r8.w57.js",
+        "handler": "_next-internal_server_app_api_(admin)_config_route_actions_0r8.w57",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_config_route_actions_0r8.w57.js.map",
+        "handler": "_next-internal_server_app_api_(admin)_config_route_actions_0r8.w57.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_dashboard_route_actions_0fguke-.js",
+        "handler": "_next-internal_server_app_api_(admin)_dashboard_route_actions_0fguke-",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_dashboard_route_actions_0fguke-.js.map",
+        "handler": "_next-internal_server_app_api_(admin)_dashboard_route_actions_0fguke-.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_tickets_route_actions_0e.h3bz.js",
+        "handler": "_next-internal_server_app_api_(admin)_tickets_route_actions_0e.h3bz",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_tickets_route_actions_0e.h3bz.js.map",
+        "handler": "_next-internal_server_app_api_(admin)_tickets_route_actions_0e.h3bz.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(auth)_login_route_actions_00a765v.js",
+        "handler": "_next-internal_server_app_api_(auth)_login_route_actions_00a765v",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(auth)_login_route_actions_00a765v.js.map",
+        "handler": "_next-internal_server_app_api_(auth)_login_route_actions_00a765v.map",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(auth)_register_route_actions_02pzjb6.js",
+        "handler": "_next-internal_server_app_api_(auth)_register_route_actions_02pzjb6",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(auth)_register_route_actions_02pzjb6.js.map",
+        "handler": "_next-internal_server_app_api_(auth)_register_route_actions_02pzjb6.map",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_entry_route_actions_0ofv1ns.js",
+        "handler": "_next-internal_server_app_api_(parking)_entry_route_actions_0ofv1ns",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_entry_route_actions_0ofv1ns.js.map",
+        "handler": "_next-internal_server_app_api_(parking)_entry_route_actions_0ofv1ns.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_exit_route_actions_0krhk~j.js",
+        "handler": "_next-internal_server_app_api_(parking)_exit_route_actions_0krhk~j",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_exit_route_actions_0krhk~j.js.map",
+        "handler": "_next-internal_server_app_api_(parking)_exit_route_actions_0krhk~j.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_slots_route_actions_0fx62sy.js",
+        "handler": "_next-internal_server_app_api_(parking)_slots_route_actions_0fx62sy",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_slots_route_actions_0fx62sy.js.map",
+        "handler": "_next-internal_server_app_api_(parking)_slots_route_actions_0fx62sy.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(system)_test_route_actions_0s5a5lo.js",
+        "handler": "_next-internal_server_app_api_(system)_test_route_actions_0s5a5lo",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(system)_test_route_actions_0s5a5lo.js.map",
+        "handler": "_next-internal_server_app_api_(system)_test_route_actions_0s5a5lo.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_favicon_ico_route_actions_095lj93.js",
+        "handler": "_next-internal_server_app_favicon_ico_route_actions_095lj93",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_favicon_ico_route_actions_095lj93.js.map",
+        "handler": "_next-internal_server_app_favicon_ico_route_actions_095lj93.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/node_modules_bcryptjs_index_0bjz0ul.js",
+        "handler": "node_modules_bcryptjs_index_0bjz0ul",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/node_modules_bcryptjs_index_0bjz0ul.js.map",
+        "handler": "node_modules_bcryptjs_index_0bjz0ul.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/node_modules_next_dist_esm_build_templates_app-route_0yubv2d.js",
+        "handler": "node_modules_next_dist_esm_build_templates_app-route_0yubv2d",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/node_modules_next_dist_esm_build_templates_app-route_0yubv2d.js.map",
+        "handler": "node_modules_next_dist_esm_build_templates_app-route_0yubv2d.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__01jlcs9._.js",
+        "handler": "[root-of-the-server]__01jlcs9._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__01jlcs9._.js.map",
+        "handler": "[root-of-the-server]__01jlcs9._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02-zzdk._.js",
+        "handler": "[root-of-the-server]__02-zzdk._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02-zzdk._.js.map",
+        "handler": "[root-of-the-server]__02-zzdk._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02hi65f._.js",
+        "handler": "[root-of-the-server]__02hi65f._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02hi65f._.js.map",
+        "handler": "[root-of-the-server]__02hi65f._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02qu6di._.js",
+        "handler": "[root-of-the-server]__02qu6di._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02qu6di._.js.map",
+        "handler": "[root-of-the-server]__02qu6di._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__03hx8rw._.js",
+        "handler": "[root-of-the-server]__03hx8rw._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__03hx8rw._.js.map",
+        "handler": "[root-of-the-server]__03hx8rw._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__06-2p1a._.js",
+        "handler": "[root-of-the-server]__06-2p1a._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__06-2p1a._.js.map",
+        "handler": "[root-of-the-server]__06-2p1a._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0c03blr._.js",
+        "handler": "[root-of-the-server]__0c03blr._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0c03blr._.js.map",
+        "handler": "[root-of-the-server]__0c03blr._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0de7ik0._.js",
+        "handler": "[root-of-the-server]__0de7ik0._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0de7ik0._.js.map",
+        "handler": "[root-of-the-server]__0de7ik0._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0hrcz1j._.js",
+        "handler": "[root-of-the-server]__0hrcz1j._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0hrcz1j._.js.map",
+        "handler": "[root-of-the-server]__0hrcz1j._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0kl9r5x._.js",
+        "handler": "[root-of-the-server]__0kl9r5x._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0kl9r5x._.js.map",
+        "handler": "[root-of-the-server]__0kl9r5x._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0qi2l6g._.js",
+        "handler": "[root-of-the-server]__0qi2l6g._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0qi2l6g._.js.map",
+        "handler": "[root-of-the-server]__0qi2l6g._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0wcm4yv._.js",
+        "handler": "[root-of-the-server]__0wcm4yv._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0wcm4yv._.js.map",
+        "handler": "[root-of-the-server]__0wcm4yv._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0~953ob._.js",
+        "handler": "[root-of-the-server]__0~953ob._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0~953ob._.js.map",
+        "handler": "[root-of-the-server]__0~953ob._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__13i5hfp._.js",
+        "handler": "[root-of-the-server]__13i5hfp._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[root-of-the-server]__13i5hfp._.js.map",
+        "handler": "[root-of-the-server]__13i5hfp._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[turbopack]_runtime.js",
+        "handler": "[turbopack]_runtime",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/[turbopack]_runtime.js.map",
+        "handler": "[turbopack]_runtime.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_077b8kp._.js",
+        "handler": "_077b8kp._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_077b8kp._.js.map",
+        "handler": "_077b8kp._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_0bwuoy1._.js",
+        "handler": "_0bwuoy1._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_0bwuoy1._.js.map",
+        "handler": "_0bwuoy1._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_0f9hph-._.js",
+        "handler": "_0f9hph-._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_0f9hph-._.js.map",
+        "handler": "_0f9hph-._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_0klu4xg._.js",
+        "handler": "_0klu4xg._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_0klu4xg._.js.map",
+        "handler": "_0klu4xg._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_0vdi~ay._.js",
+        "handler": "_0vdi~ay._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_0vdi~ay._.js.map",
+        "handler": "_0vdi~ay._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(admin)_dashboard_page_actions_0txhcuo.js",
+        "handler": "_next-internal_server_app_(admin)_dashboard_page_actions_0txhcuo",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(admin)_dashboard_page_actions_0txhcuo.js.map",
+        "handler": "_next-internal_server_app_(admin)_dashboard_page_actions_0txhcuo.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(auth)_login_page_actions_0wx3ul..js",
+        "handler": "_next-internal_server_app_(auth)_login_page_actions_0wx3ul.",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(auth)_login_page_actions_0wx3ul..js.map",
+        "handler": "_next-internal_server_app_(auth)_login_page_actions_0wx3ul..map",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(auth)_register_page_actions_02nrb_5.js",
+        "handler": "_next-internal_server_app_(auth)_register_page_actions_02nrb_5",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(auth)_register_page_actions_02nrb_5.js.map",
+        "handler": "_next-internal_server_app_(auth)_register_page_actions_02nrb_5.map",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(parking)_entry_page_actions_08e4k.6.js",
+        "handler": "_next-internal_server_app_(parking)_entry_page_actions_08e4k.6",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(parking)_entry_page_actions_08e4k.6.js.map",
+        "handler": "_next-internal_server_app_(parking)_entry_page_actions_08e4k.6.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(parking)_exit_page_actions_0bzn7pm.js",
+        "handler": "_next-internal_server_app_(parking)_exit_page_actions_0bzn7pm",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(parking)_exit_page_actions_0bzn7pm.js.map",
+        "handler": "_next-internal_server_app_(parking)_exit_page_actions_0bzn7pm.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(site)_page_actions_00k8kul.js",
+        "handler": "_next-internal_server_app_(site)_page_actions_00k8kul",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(site)_page_actions_00k8kul.js.map",
+        "handler": "_next-internal_server_app_(site)_page_actions_00k8kul.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app__global-error_page_actions_0k77kol.js",
+        "handler": "_next-internal_server_app__global-error_page_actions_0k77kol",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app__global-error_page_actions_0k77kol.js.map",
+        "handler": "_next-internal_server_app__global-error_page_actions_0k77kol.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app__not-found_page_actions_0eq97pa.js",
+        "handler": "_next-internal_server_app__not-found_page_actions_0eq97pa",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app__not-found_page_actions_0eq97pa.js.map",
+        "handler": "_next-internal_server_app__not-found_page_actions_0eq97pa.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/app_(site)_page_tsx_11ocld5._.js",
+        "handler": "app_(site)_page_tsx_11ocld5._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/app_(site)_page_tsx_11ocld5._.js.map",
+        "handler": "app_(site)_page_tsx_11ocld5._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_03alrmj._.js",
+        "handler": "node_modules_03alrmj._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_03alrmj._.js.map",
+        "handler": "node_modules_03alrmj._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_09w7yel._.js",
+        "handler": "node_modules_09w7yel._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_09w7yel._.js.map",
+        "handler": "node_modules_09w7yel._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_0vtdjw7._.js",
+        "handler": "node_modules_0vtdjw7._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_0vtdjw7._.js.map",
+        "handler": "node_modules_0vtdjw7._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_html-to-image_es_index_0rqkl87.js",
+        "handler": "node_modules_html-to-image_es_index_0rqkl87",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_html-to-image_es_index_0rqkl87.js.map",
+        "handler": "node_modules_html-to-image_es_index_0rqkl87.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_leaflet_dist_leaflet-src_0t8vne..js",
+        "handler": "node_modules_leaflet_dist_leaflet-src_0t8vne.",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_leaflet_dist_leaflet-src_0t8vne..js.map",
+        "handler": "node_modules_leaflet_dist_leaflet-src_0t8vne..map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_03nkrli._.js",
+        "handler": "node_modules_next_dist_03nkrli._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_03nkrli._.js.map",
+        "handler": "node_modules_next_dist_03nkrli._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_03p1s9l._.js",
+        "handler": "node_modules_next_dist_03p1s9l._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_03p1s9l._.js.map",
+        "handler": "node_modules_next_dist_03p1s9l._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_0h9llsw._.js",
+        "handler": "node_modules_next_dist_0h9llsw._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_0h9llsw._.js.map",
+        "handler": "node_modules_next_dist_0h9llsw._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js",
+        "handler": "node_modules_next_dist_client_components_0inhx6q._",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js.map",
+        "handler": "node_modules_next_dist_client_components_0inhx6q._.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js",
+        "handler": "node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js.map",
+        "handler": "node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js",
+        "handler": "node_modules_next_dist_client_components_builtin_global-error_0lgvd_.",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js.map",
+        "handler": "node_modules_next_dist_client_components_builtin_global-error_0lgvd_..map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23.js",
+        "handler": "node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23.js.map",
+        "handler": "node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23.map",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0.gtcj1.js",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_0.gtcj1",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0.gtcj1.js.map",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_0.gtcj1.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0.vfv08.js",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_0.vfv08",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0.vfv08.js.map",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_0.vfv08.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_002l7yi.js",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_002l7yi",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_002l7yi.js.map",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_002l7yi.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_01gpef~.js",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_01gpef~",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_01gpef~.js.map",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_01gpef~.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_06x0797.js",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_06x0797",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_06x0797.js.map",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_06x0797.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0crp9us.js",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_0crp9us",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0crp9us.js.map",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_0crp9us.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0g11zwc.js",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_0g11zwc",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0g11zwc.js.map",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_0g11zwc.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0nsg22r.js",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_0nsg22r",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0nsg22r.js.map",
+        "handler": "node_modules_next_dist_esm_build_templates_app-page_0nsg22r.map",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/interception-route-rewrite-manifest.js",
+        "handler": "interception-route-rewrite-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/middleware-build-manifest.js",
+        "handler": "middleware-build-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/middleware-manifest.json",
+        "handler": "middleware-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/next-font-manifest.js",
+        "handler": "next-font-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/next-font-manifest.json",
+        "handler": "next-font-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/pages-manifest.json",
+        "handler": "pages-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/server-reference-manifest.js",
+        "handler": "server-reference-manifest",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/server/server-reference-manifest.json",
+        "handler": "server-reference-manifeston",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/.next/types/routes.d.ts",
+        "handler": "routes.d.ts",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/app/api/(admin)/config/route.ts",
+        "handler": "route.ts",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/app/api/(admin)/dashboard/route.ts",
+        "handler": "route.ts",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/app/api/(admin)/tickets/route.ts",
+        "handler": "route.ts",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/app/api/(auth)/login/route.ts",
+        "handler": "route.ts",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/app/api/(auth)/register/route.ts",
+        "handler": "route.ts",
+        "auth_method": "basic",
+        "risk_level": "medium",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/app/api/(parking)/entry/route.ts",
+        "handler": "route.ts",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/app/api/(parking)/exit/route.ts",
+        "handler": "route.ts",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/app/api/(parking)/slots/route.ts",
+        "handler": "route.ts",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/app/api/(system)/test/route.ts",
+        "handler": "route.ts",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      },
+      {
+        "path": "smartpark/components/RouteGuard.tsx",
+        "handler": "RouteGuard.tsx",
+        "auth_method": null,
+        "risk_level": "critical",
+        "input_types": []
+      }
+    ],
+    "data_flows": [
+      {
+        "source": "smartpark/.next/app-path-routes-manifest.json",
+        "sink": "smartpark/lib/db.ts",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      },
+      {
+        "source": "smartpark/.next/app-path-routes-manifest.json",
+        "sink": "smartpark/models/ParkingSlot.ts",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      },
+      {
+        "source": "smartpark/.next/app-path-routes-manifest.json",
+        "sink": "smartpark/models/SystemConfig.ts",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      },
+      {
+        "source": "smartpark/.next/dev/routes-manifest.json",
+        "sink": "smartpark/lib/db.ts",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      },
+      {
+        "source": "smartpark/.next/dev/routes-manifest.json",
+        "sink": "smartpark/models/ParkingSlot.ts",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      },
+      {
+        "source": "smartpark/.next/dev/routes-manifest.json",
+        "sink": "smartpark/models/SystemConfig.ts",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      },
+      {
+        "source": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_server_route-modules_app-page_0f6k0sl._.js",
+        "sink": "smartpark/lib/db.ts",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      },
+      {
+        "source": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_server_route-modules_app-page_0f6k0sl._.js",
+        "sink": "smartpark/models/ParkingSlot.ts",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      },
+      {
+        "source": "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_server_route-modules_app-page_0f6k0sl._.js",
+        "sink": "smartpark/models/SystemConfig.ts",
+        "validation_present": false,
+        "risk_level": "critical",
+        "intermediate_steps": []
+      }
+    ],
+    "privilege_issues": [
+      {
+        "component": "entry_points",
+        "issue": "342 entry points lack authentication",
+        "severity": "critical",
+        "rationale": "Unauthenticated access to public endpoints enables privilege escalation and unauthorized data access.",
+        "affected_entry_points": [
+          "smartpark/.next/app-path-routes-manifest.json",
+          "smartpark/.next/build/chunks/[root-of-the-server]__0d-m0h0._.js",
+          "smartpark/.next/build/chunks/[root-of-the-server]__0d-m0h0._.js.map",
+          "smartpark/.next/build/chunks/[root-of-the-server]__0ubbtyl._.js",
+          "smartpark/.next/build/chunks/[root-of-the-server]__0ubbtyl._.js.map",
+          "smartpark/.next/dev/build/chunks/[root-of-the-server]__0d-m0h0._.js",
+          "smartpark/.next/dev/build/chunks/[root-of-the-server]__0d-m0h0._.js.map",
+          "smartpark/.next/dev/build/chunks/[root-of-the-server]__0ubbtyl._.js",
+          "smartpark/.next/dev/build/chunks/[root-of-the-server]__0ubbtyl._.js.map",
+          "smartpark/.next/dev/routes-manifest.json",
+          "smartpark/.next/dev/server/app-paths-manifest.json",
+          "smartpark/.next/dev/server/app/(site)/page.js",
+          "smartpark/.next/dev/server/app/(site)/page.js.map",
+          "smartpark/.next/dev/server/app/(site)/page/app-paths-manifest.json",
+          "smartpark/.next/dev/server/app/(site)/page/build-manifest.json",
+          "smartpark/.next/dev/server/app/(site)/page/next-font-manifest.json",
+          "smartpark/.next/dev/server/app/(site)/page/react-loadable-manifest.json",
+          "smartpark/.next/dev/server/app/(site)/page/server-reference-manifest.json",
+          "smartpark/.next/dev/server/app/(site)/page_client-reference-manifest.js",
+          "smartpark/.next/dev/server/chunks/ssr/[externals]__0n13xf4._.js",
+          "smartpark/.next/dev/server/chunks/ssr/[externals]__0n13xf4._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__01jlcs9._.js",
+          "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__01jlcs9._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__055e8xb._.js",
+          "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__055e8xb._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__05d-gx8._.js",
+          "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__05d-gx8._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/[turbopack]_runtime.js",
+          "smartpark/.next/dev/server/chunks/ssr/[turbopack]_runtime.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/_next-internal_server_app_(site)_page_actions_00k8kul.js",
+          "smartpark/.next/dev/server/chunks/ssr/_next-internal_server_app_(site)_page_actions_00k8kul.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/app_(site)_page_tsx_11ocld5._.js",
+          "smartpark/.next/dev/server/chunks/ssr/app_(site)_page_tsx_11ocld5._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_09w7yel._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_09w7yel._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_0_socv7._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_0_socv7._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_@swc_helpers_cjs__interop_require_wildcard_cjs_0gn4jlg._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_@swc_helpers_cjs__interop_require_wildcard_cjs_0gn4jlg._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_lucide-react_dist_esm_03jbwt4._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_lucide-react_dist_esm_03jbwt4._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_11b4uhw._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_11b4uhw._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_0.p0.cy._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_0.p0.cy._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_compiled_07ho8ku._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_compiled_07ho8ku._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_esm_00xse_0._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_esm_00xse_0._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_esm_0cqcg00._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_esm_0cqcg00._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_server_route-modules_app-page_0f6k0sl._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_server_route-modules_app-page_0f6k0sl._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_navigation_08-xh1..js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_navigation_08-xh1..js.map",
+          "smartpark/.next/dev/server/interception-route-rewrite-manifest.js",
+          "smartpark/.next/dev/server/middleware-build-manifest.js",
+          "smartpark/.next/dev/server/middleware-manifest.json",
+          "smartpark/.next/dev/server/next-font-manifest.js",
+          "smartpark/.next/dev/server/next-font-manifest.json",
+          "smartpark/.next/dev/server/pages-manifest.json",
+          "smartpark/.next/dev/server/server-reference-manifest.js",
+          "smartpark/.next/dev/server/server-reference-manifest.json",
+          "smartpark/.next/dev/static/chunks/[root-of-the-server]__0q6rmb6._.css",
+          "smartpark/.next/dev/static/chunks/[root-of-the-server]__0q6rmb6._.css.map",
+          "smartpark/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js",
+          "smartpark/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js.map",
+          "smartpark/.next/dev/types/routes.d.ts",
+          "smartpark/.next/next-minimal-server.js.nft.json",
+          "smartpark/.next/next-server.js.nft.json",
+          "smartpark/.next/required-server-files.js",
+          "smartpark/.next/required-server-files.json",
+          "smartpark/.next/server/app-paths-manifest.json",
+          "smartpark/.next/server/app/(admin)/dashboard/page.js",
+          "smartpark/.next/server/app/(admin)/dashboard/page.js.map",
+          "smartpark/.next/server/app/(admin)/dashboard/page.js.nft.json",
+          "smartpark/.next/server/app/(admin)/dashboard/page/app-paths-manifest.json",
+          "smartpark/.next/server/app/(admin)/dashboard/page/build-manifest.json",
+          "smartpark/.next/server/app/(admin)/dashboard/page/next-font-manifest.json",
+          "smartpark/.next/server/app/(admin)/dashboard/page/react-loadable-manifest.json",
+          "smartpark/.next/server/app/(admin)/dashboard/page/server-reference-manifest.json",
+          "smartpark/.next/server/app/(admin)/dashboard/page_client-reference-manifest.js",
+          "smartpark/.next/server/app/(parking)/entry/page.js",
+          "smartpark/.next/server/app/(parking)/entry/page.js.map",
+          "smartpark/.next/server/app/(parking)/entry/page.js.nft.json",
+          "smartpark/.next/server/app/(parking)/entry/page/app-paths-manifest.json",
+          "smartpark/.next/server/app/(parking)/entry/page/build-manifest.json",
+          "smartpark/.next/server/app/(parking)/entry/page/next-font-manifest.json",
+          "smartpark/.next/server/app/(parking)/entry/page/react-loadable-manifest.json",
+          "smartpark/.next/server/app/(parking)/entry/page/server-reference-manifest.json",
+          "smartpark/.next/server/app/(parking)/entry/page_client-reference-manifest.js",
+          "smartpark/.next/server/app/(parking)/exit/page.js",
+          "smartpark/.next/server/app/(parking)/exit/page.js.map",
+          "smartpark/.next/server/app/(parking)/exit/page.js.nft.json",
+          "smartpark/.next/server/app/(parking)/exit/page/app-paths-manifest.json",
+          "smartpark/.next/server/app/(parking)/exit/page/build-manifest.json",
+          "smartpark/.next/server/app/(parking)/exit/page/next-font-manifest.json",
+          "smartpark/.next/server/app/(parking)/exit/page/react-loadable-manifest.json",
+          "smartpark/.next/server/app/(parking)/exit/page/server-reference-manifest.json",
+          "smartpark/.next/server/app/(parking)/exit/page_client-reference-manifest.js",
+          "smartpark/.next/server/app/(site)/page.js",
+          "smartpark/.next/server/app/(site)/page.js.map",
+          "smartpark/.next/server/app/(site)/page.js.nft.json",
+          "smartpark/.next/server/app/(site)/page/app-paths-manifest.json",
+          "smartpark/.next/server/app/(site)/page/build-manifest.json",
+          "smartpark/.next/server/app/(site)/page/next-font-manifest.json",
+          "smartpark/.next/server/app/(site)/page/react-loadable-manifest.json",
+          "smartpark/.next/server/app/(site)/page/server-reference-manifest.json",
+          "smartpark/.next/server/app/(site)/page_client-reference-manifest.js",
+          "smartpark/.next/server/app/_global-error/page.js",
+          "smartpark/.next/server/app/_global-error/page.js.map",
+          "smartpark/.next/server/app/_global-error/page.js.nft.json",
+          "smartpark/.next/server/app/_global-error/page/app-paths-manifest.json",
+          "smartpark/.next/server/app/_global-error/page/build-manifest.json",
+          "smartpark/.next/server/app/_global-error/page/next-font-manifest.json",
+          "smartpark/.next/server/app/_global-error/page/react-loadable-manifest.json",
+          "smartpark/.next/server/app/_global-error/page/server-reference-manifest.json",
+          "smartpark/.next/server/app/_global-error/page_client-reference-manifest.js",
+          "smartpark/.next/server/app/_not-found/page.js",
+          "smartpark/.next/server/app/_not-found/page.js.map",
+          "smartpark/.next/server/app/_not-found/page.js.nft.json",
+          "smartpark/.next/server/app/_not-found/page/app-paths-manifest.json",
+          "smartpark/.next/server/app/_not-found/page/build-manifest.json",
+          "smartpark/.next/server/app/_not-found/page/next-font-manifest.json",
+          "smartpark/.next/server/app/_not-found/page/react-loadable-manifest.json",
+          "smartpark/.next/server/app/_not-found/page/server-reference-manifest.json",
+          "smartpark/.next/server/app/_not-found/page_client-reference-manifest.js",
+          "smartpark/.next/server/app/api/(admin)/config/route.js",
+          "smartpark/.next/server/app/api/(admin)/config/route.js.map",
+          "smartpark/.next/server/app/api/(admin)/config/route.js.nft.json",
+          "smartpark/.next/server/app/api/(admin)/config/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/config/route/build-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/config/route/server-reference-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/config/route_client-reference-manifest.js",
+          "smartpark/.next/server/app/api/(admin)/dashboard/route.js",
+          "smartpark/.next/server/app/api/(admin)/dashboard/route.js.map",
+          "smartpark/.next/server/app/api/(admin)/dashboard/route.js.nft.json",
+          "smartpark/.next/server/app/api/(admin)/dashboard/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/dashboard/route/build-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/dashboard/route/server-reference-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/dashboard/route_client-reference-manifest.js",
+          "smartpark/.next/server/app/api/(admin)/tickets/route.js",
+          "smartpark/.next/server/app/api/(admin)/tickets/route.js.map",
+          "smartpark/.next/server/app/api/(admin)/tickets/route.js.nft.json",
+          "smartpark/.next/server/app/api/(admin)/tickets/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/tickets/route/build-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/tickets/route/server-reference-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/tickets/route_client-reference-manifest.js",
+          "smartpark/.next/server/app/api/(parking)/entry/route.js",
+          "smartpark/.next/server/app/api/(parking)/entry/route.js.map",
+          "smartpark/.next/server/app/api/(parking)/entry/route.js.nft.json",
+          "smartpark/.next/server/app/api/(parking)/entry/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/entry/route/build-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/entry/route/server-reference-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/entry/route_client-reference-manifest.js",
+          "smartpark/.next/server/app/api/(parking)/exit/route.js",
+          "smartpark/.next/server/app/api/(parking)/exit/route.js.map",
+          "smartpark/.next/server/app/api/(parking)/exit/route.js.nft.json",
+          "smartpark/.next/server/app/api/(parking)/exit/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/exit/route/build-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/exit/route/server-reference-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/exit/route_client-reference-manifest.js",
+          "smartpark/.next/server/app/api/(parking)/slots/route.js",
+          "smartpark/.next/server/app/api/(parking)/slots/route.js.map",
+          "smartpark/.next/server/app/api/(parking)/slots/route.js.nft.json",
+          "smartpark/.next/server/app/api/(parking)/slots/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/slots/route/build-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/slots/route/server-reference-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/slots/route_client-reference-manifest.js",
+          "smartpark/.next/server/app/api/(system)/test/route.js",
+          "smartpark/.next/server/app/api/(system)/test/route.js.map",
+          "smartpark/.next/server/app/api/(system)/test/route.js.nft.json",
+          "smartpark/.next/server/app/api/(system)/test/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/api/(system)/test/route/build-manifest.json",
+          "smartpark/.next/server/app/api/(system)/test/route/server-reference-manifest.json",
+          "smartpark/.next/server/app/api/(system)/test/route_client-reference-manifest.js",
+          "smartpark/.next/server/app/favicon.ico/route.js",
+          "smartpark/.next/server/app/favicon.ico/route.js.map",
+          "smartpark/.next/server/app/favicon.ico/route.js.nft.json",
+          "smartpark/.next/server/app/favicon.ico/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/favicon.ico/route/build-manifest.json",
+          "smartpark/.next/server/chunks/[externals]_next_dist_0arv.vj._.js",
+          "smartpark/.next/server/chunks/[externals]_next_dist_0arv.vj._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__08.91j-._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__08.91j-._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__08bvc9k._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__08bvc9k._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__09_xxhc._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__09_xxhc._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0ak-_vm._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0ak-_vm._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0f5u7.s._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0f5u7.s._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0g-c_1u._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0g-c_1u._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0g_ho0i._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0g_ho0i._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0h0w.uz._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0h0w.uz._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0hywybc._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0hywybc._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0j8-xkl._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0j8-xkl._.js.map",
+          "smartpark/.next/server/chunks/[turbopack]_runtime.js",
+          "smartpark/.next/server/chunks/[turbopack]_runtime.js.map",
+          "smartpark/.next/server/chunks/_12t-czy._.js",
+          "smartpark/.next/server/chunks/_12t-czy._.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_config_route_actions_0r8.w57.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_config_route_actions_0r8.w57.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_dashboard_route_actions_0fguke-.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_dashboard_route_actions_0fguke-.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_tickets_route_actions_0e.h3bz.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_tickets_route_actions_0e.h3bz.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_entry_route_actions_0ofv1ns.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_entry_route_actions_0ofv1ns.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_exit_route_actions_0krhk~j.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_exit_route_actions_0krhk~j.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_slots_route_actions_0fx62sy.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_slots_route_actions_0fx62sy.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(system)_test_route_actions_0s5a5lo.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(system)_test_route_actions_0s5a5lo.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_favicon_ico_route_actions_095lj93.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_favicon_ico_route_actions_095lj93.js.map",
+          "smartpark/.next/server/chunks/node_modules_bcryptjs_index_0bjz0ul.js",
+          "smartpark/.next/server/chunks/node_modules_bcryptjs_index_0bjz0ul.js.map",
+          "smartpark/.next/server/chunks/node_modules_next_dist_esm_build_templates_app-route_0yubv2d.js",
+          "smartpark/.next/server/chunks/node_modules_next_dist_esm_build_templates_app-route_0yubv2d.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__01jlcs9._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__01jlcs9._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02-zzdk._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02-zzdk._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02hi65f._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02hi65f._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02qu6di._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02qu6di._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__03hx8rw._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__03hx8rw._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__06-2p1a._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__06-2p1a._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0c03blr._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0c03blr._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0de7ik0._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0de7ik0._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0hrcz1j._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0hrcz1j._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0kl9r5x._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0kl9r5x._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0qi2l6g._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0qi2l6g._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0wcm4yv._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0wcm4yv._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0~953ob._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0~953ob._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__13i5hfp._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__13i5hfp._.js.map",
+          "smartpark/.next/server/chunks/ssr/[turbopack]_runtime.js",
+          "smartpark/.next/server/chunks/ssr/[turbopack]_runtime.js.map",
+          "smartpark/.next/server/chunks/ssr/_077b8kp._.js",
+          "smartpark/.next/server/chunks/ssr/_077b8kp._.js.map",
+          "smartpark/.next/server/chunks/ssr/_0bwuoy1._.js",
+          "smartpark/.next/server/chunks/ssr/_0bwuoy1._.js.map",
+          "smartpark/.next/server/chunks/ssr/_0f9hph-._.js",
+          "smartpark/.next/server/chunks/ssr/_0f9hph-._.js.map",
+          "smartpark/.next/server/chunks/ssr/_0klu4xg._.js",
+          "smartpark/.next/server/chunks/ssr/_0klu4xg._.js.map",
+          "smartpark/.next/server/chunks/ssr/_0vdi~ay._.js",
+          "smartpark/.next/server/chunks/ssr/_0vdi~ay._.js.map",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(admin)_dashboard_page_actions_0txhcuo.js",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(admin)_dashboard_page_actions_0txhcuo.js.map",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(parking)_entry_page_actions_08e4k.6.js",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(parking)_entry_page_actions_08e4k.6.js.map",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(parking)_exit_page_actions_0bzn7pm.js",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(parking)_exit_page_actions_0bzn7pm.js.map",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(site)_page_actions_00k8kul.js",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(site)_page_actions_00k8kul.js.map",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app__global-error_page_actions_0k77kol.js",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app__global-error_page_actions_0k77kol.js.map",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app__not-found_page_actions_0eq97pa.js",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app__not-found_page_actions_0eq97pa.js.map",
+          "smartpark/.next/server/chunks/ssr/app_(site)_page_tsx_11ocld5._.js",
+          "smartpark/.next/server/chunks/ssr/app_(site)_page_tsx_11ocld5._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_03alrmj._.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_03alrmj._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_09w7yel._.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_09w7yel._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_0vtdjw7._.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_0vtdjw7._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_html-to-image_es_index_0rqkl87.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_html-to-image_es_index_0rqkl87.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_leaflet_dist_leaflet-src_0t8vne..js",
+          "smartpark/.next/server/chunks/ssr/node_modules_leaflet_dist_leaflet-src_0t8vne..js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_03nkrli._.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_03nkrli._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_03p1s9l._.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_03p1s9l._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_0h9llsw._.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_0h9llsw._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0.gtcj1.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0.gtcj1.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0.vfv08.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0.vfv08.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_002l7yi.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_002l7yi.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_01gpef~.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_01gpef~.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_06x0797.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_06x0797.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0crp9us.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0crp9us.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0g11zwc.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0g11zwc.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0nsg22r.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0nsg22r.js.map",
+          "smartpark/.next/server/interception-route-rewrite-manifest.js",
+          "smartpark/.next/server/middleware-build-manifest.js",
+          "smartpark/.next/server/middleware-manifest.json",
+          "smartpark/.next/server/next-font-manifest.js",
+          "smartpark/.next/server/next-font-manifest.json",
+          "smartpark/.next/server/pages-manifest.json",
+          "smartpark/.next/server/server-reference-manifest.js",
+          "smartpark/.next/server/server-reference-manifest.json",
+          "smartpark/.next/types/routes.d.ts",
+          "smartpark/app/api/(admin)/config/route.ts",
+          "smartpark/app/api/(admin)/dashboard/route.ts",
+          "smartpark/app/api/(admin)/tickets/route.ts",
+          "smartpark/app/api/(parking)/entry/route.ts",
+          "smartpark/app/api/(parking)/exit/route.ts",
+          "smartpark/app/api/(parking)/slots/route.ts",
+          "smartpark/app/api/(system)/test/route.ts",
+          "smartpark/components/RouteGuard.tsx"
+        ],
+        "remediation_effort": "low"
+      },
+      {
+        "component": "data_access",
+        "issue": "Majority of data flows lack input validation",
+        "severity": "critical",
+        "rationale": "Unvalidated inputs can be exploited for SQL injection, command injection, or other code execution attacks.",
+        "affected_entry_points": [],
+        "remediation_effort": "high"
+      }
+    ],
+    "suggestions": [
+      {
+        "reason": "Unauthenticated entry points expose the application to unauthorized access",
+        "recommendation": "Apply authentication middleware to all public routes; use JWT tokens or OAuth2",
+        "impacted_files": [
+          "smartpark/.next/app-path-routes-manifest.json",
+          "smartpark/.next/build/chunks/[root-of-the-server]__0d-m0h0._.js",
+          "smartpark/.next/build/chunks/[root-of-the-server]__0d-m0h0._.js.map",
+          "smartpark/.next/build/chunks/[root-of-the-server]__0ubbtyl._.js",
+          "smartpark/.next/build/chunks/[root-of-the-server]__0ubbtyl._.js.map",
+          "smartpark/.next/dev/build/chunks/[root-of-the-server]__0d-m0h0._.js",
+          "smartpark/.next/dev/build/chunks/[root-of-the-server]__0d-m0h0._.js.map",
+          "smartpark/.next/dev/build/chunks/[root-of-the-server]__0ubbtyl._.js",
+          "smartpark/.next/dev/build/chunks/[root-of-the-server]__0ubbtyl._.js.map",
+          "smartpark/.next/dev/routes-manifest.json",
+          "smartpark/.next/dev/server/app-paths-manifest.json",
+          "smartpark/.next/dev/server/app/(site)/page.js",
+          "smartpark/.next/dev/server/app/(site)/page.js.map",
+          "smartpark/.next/dev/server/app/(site)/page/app-paths-manifest.json",
+          "smartpark/.next/dev/server/app/(site)/page/build-manifest.json",
+          "smartpark/.next/dev/server/app/(site)/page/next-font-manifest.json",
+          "smartpark/.next/dev/server/app/(site)/page/react-loadable-manifest.json",
+          "smartpark/.next/dev/server/app/(site)/page/server-reference-manifest.json",
+          "smartpark/.next/dev/server/app/(site)/page_client-reference-manifest.js",
+          "smartpark/.next/dev/server/chunks/ssr/[externals]__0n13xf4._.js",
+          "smartpark/.next/dev/server/chunks/ssr/[externals]__0n13xf4._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__01jlcs9._.js",
+          "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__01jlcs9._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__055e8xb._.js",
+          "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__055e8xb._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__05d-gx8._.js",
+          "smartpark/.next/dev/server/chunks/ssr/[root-of-the-server]__05d-gx8._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/[turbopack]_runtime.js",
+          "smartpark/.next/dev/server/chunks/ssr/[turbopack]_runtime.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/_next-internal_server_app_(site)_page_actions_00k8kul.js",
+          "smartpark/.next/dev/server/chunks/ssr/_next-internal_server_app_(site)_page_actions_00k8kul.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/app_(site)_page_tsx_11ocld5._.js",
+          "smartpark/.next/dev/server/chunks/ssr/app_(site)_page_tsx_11ocld5._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_09w7yel._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_09w7yel._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_0_socv7._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_0_socv7._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_@swc_helpers_cjs__interop_require_wildcard_cjs_0gn4jlg._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_@swc_helpers_cjs__interop_require_wildcard_cjs_0gn4jlg._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_lucide-react_dist_esm_03jbwt4._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_lucide-react_dist_esm_03jbwt4._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_11b4uhw._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_11b4uhw._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_0.p0.cy._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_0.p0.cy._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_compiled_07ho8ku._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_compiled_07ho8ku._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_esm_00xse_0._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_esm_00xse_0._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_esm_0cqcg00._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_esm_0cqcg00._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_server_route-modules_app-page_0f6k0sl._.js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_server_route-modules_app-page_0f6k0sl._.js.map",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_navigation_08-xh1..js",
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_navigation_08-xh1..js.map",
+          "smartpark/.next/dev/server/interception-route-rewrite-manifest.js",
+          "smartpark/.next/dev/server/middleware-build-manifest.js",
+          "smartpark/.next/dev/server/middleware-manifest.json",
+          "smartpark/.next/dev/server/next-font-manifest.js",
+          "smartpark/.next/dev/server/next-font-manifest.json",
+          "smartpark/.next/dev/server/pages-manifest.json",
+          "smartpark/.next/dev/server/server-reference-manifest.js",
+          "smartpark/.next/dev/server/server-reference-manifest.json",
+          "smartpark/.next/dev/static/chunks/[root-of-the-server]__0q6rmb6._.css",
+          "smartpark/.next/dev/static/chunks/[root-of-the-server]__0q6rmb6._.css.map",
+          "smartpark/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js",
+          "smartpark/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js.map",
+          "smartpark/.next/dev/types/routes.d.ts",
+          "smartpark/.next/next-minimal-server.js.nft.json",
+          "smartpark/.next/next-server.js.nft.json",
+          "smartpark/.next/required-server-files.js",
+          "smartpark/.next/required-server-files.json",
+          "smartpark/.next/server/app-paths-manifest.json",
+          "smartpark/.next/server/app/(admin)/dashboard/page.js",
+          "smartpark/.next/server/app/(admin)/dashboard/page.js.map",
+          "smartpark/.next/server/app/(admin)/dashboard/page.js.nft.json",
+          "smartpark/.next/server/app/(admin)/dashboard/page/app-paths-manifest.json",
+          "smartpark/.next/server/app/(admin)/dashboard/page/build-manifest.json",
+          "smartpark/.next/server/app/(admin)/dashboard/page/next-font-manifest.json",
+          "smartpark/.next/server/app/(admin)/dashboard/page/react-loadable-manifest.json",
+          "smartpark/.next/server/app/(admin)/dashboard/page/server-reference-manifest.json",
+          "smartpark/.next/server/app/(admin)/dashboard/page_client-reference-manifest.js",
+          "smartpark/.next/server/app/(parking)/entry/page.js",
+          "smartpark/.next/server/app/(parking)/entry/page.js.map",
+          "smartpark/.next/server/app/(parking)/entry/page.js.nft.json",
+          "smartpark/.next/server/app/(parking)/entry/page/app-paths-manifest.json",
+          "smartpark/.next/server/app/(parking)/entry/page/build-manifest.json",
+          "smartpark/.next/server/app/(parking)/entry/page/next-font-manifest.json",
+          "smartpark/.next/server/app/(parking)/entry/page/react-loadable-manifest.json",
+          "smartpark/.next/server/app/(parking)/entry/page/server-reference-manifest.json",
+          "smartpark/.next/server/app/(parking)/entry/page_client-reference-manifest.js",
+          "smartpark/.next/server/app/(parking)/exit/page.js",
+          "smartpark/.next/server/app/(parking)/exit/page.js.map",
+          "smartpark/.next/server/app/(parking)/exit/page.js.nft.json",
+          "smartpark/.next/server/app/(parking)/exit/page/app-paths-manifest.json",
+          "smartpark/.next/server/app/(parking)/exit/page/build-manifest.json",
+          "smartpark/.next/server/app/(parking)/exit/page/next-font-manifest.json",
+          "smartpark/.next/server/app/(parking)/exit/page/react-loadable-manifest.json",
+          "smartpark/.next/server/app/(parking)/exit/page/server-reference-manifest.json",
+          "smartpark/.next/server/app/(parking)/exit/page_client-reference-manifest.js",
+          "smartpark/.next/server/app/(site)/page.js",
+          "smartpark/.next/server/app/(site)/page.js.map",
+          "smartpark/.next/server/app/(site)/page.js.nft.json",
+          "smartpark/.next/server/app/(site)/page/app-paths-manifest.json",
+          "smartpark/.next/server/app/(site)/page/build-manifest.json",
+          "smartpark/.next/server/app/(site)/page/next-font-manifest.json",
+          "smartpark/.next/server/app/(site)/page/react-loadable-manifest.json",
+          "smartpark/.next/server/app/(site)/page/server-reference-manifest.json",
+          "smartpark/.next/server/app/(site)/page_client-reference-manifest.js",
+          "smartpark/.next/server/app/_global-error/page.js",
+          "smartpark/.next/server/app/_global-error/page.js.map",
+          "smartpark/.next/server/app/_global-error/page.js.nft.json",
+          "smartpark/.next/server/app/_global-error/page/app-paths-manifest.json",
+          "smartpark/.next/server/app/_global-error/page/build-manifest.json",
+          "smartpark/.next/server/app/_global-error/page/next-font-manifest.json",
+          "smartpark/.next/server/app/_global-error/page/react-loadable-manifest.json",
+          "smartpark/.next/server/app/_global-error/page/server-reference-manifest.json",
+          "smartpark/.next/server/app/_global-error/page_client-reference-manifest.js",
+          "smartpark/.next/server/app/_not-found/page.js",
+          "smartpark/.next/server/app/_not-found/page.js.map",
+          "smartpark/.next/server/app/_not-found/page.js.nft.json",
+          "smartpark/.next/server/app/_not-found/page/app-paths-manifest.json",
+          "smartpark/.next/server/app/_not-found/page/build-manifest.json",
+          "smartpark/.next/server/app/_not-found/page/next-font-manifest.json",
+          "smartpark/.next/server/app/_not-found/page/react-loadable-manifest.json",
+          "smartpark/.next/server/app/_not-found/page/server-reference-manifest.json",
+          "smartpark/.next/server/app/_not-found/page_client-reference-manifest.js",
+          "smartpark/.next/server/app/api/(admin)/config/route.js",
+          "smartpark/.next/server/app/api/(admin)/config/route.js.map",
+          "smartpark/.next/server/app/api/(admin)/config/route.js.nft.json",
+          "smartpark/.next/server/app/api/(admin)/config/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/config/route/build-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/config/route/server-reference-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/config/route_client-reference-manifest.js",
+          "smartpark/.next/server/app/api/(admin)/dashboard/route.js",
+          "smartpark/.next/server/app/api/(admin)/dashboard/route.js.map",
+          "smartpark/.next/server/app/api/(admin)/dashboard/route.js.nft.json",
+          "smartpark/.next/server/app/api/(admin)/dashboard/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/dashboard/route/build-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/dashboard/route/server-reference-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/dashboard/route_client-reference-manifest.js",
+          "smartpark/.next/server/app/api/(admin)/tickets/route.js",
+          "smartpark/.next/server/app/api/(admin)/tickets/route.js.map",
+          "smartpark/.next/server/app/api/(admin)/tickets/route.js.nft.json",
+          "smartpark/.next/server/app/api/(admin)/tickets/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/tickets/route/build-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/tickets/route/server-reference-manifest.json",
+          "smartpark/.next/server/app/api/(admin)/tickets/route_client-reference-manifest.js",
+          "smartpark/.next/server/app/api/(parking)/entry/route.js",
+          "smartpark/.next/server/app/api/(parking)/entry/route.js.map",
+          "smartpark/.next/server/app/api/(parking)/entry/route.js.nft.json",
+          "smartpark/.next/server/app/api/(parking)/entry/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/entry/route/build-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/entry/route/server-reference-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/entry/route_client-reference-manifest.js",
+          "smartpark/.next/server/app/api/(parking)/exit/route.js",
+          "smartpark/.next/server/app/api/(parking)/exit/route.js.map",
+          "smartpark/.next/server/app/api/(parking)/exit/route.js.nft.json",
+          "smartpark/.next/server/app/api/(parking)/exit/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/exit/route/build-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/exit/route/server-reference-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/exit/route_client-reference-manifest.js",
+          "smartpark/.next/server/app/api/(parking)/slots/route.js",
+          "smartpark/.next/server/app/api/(parking)/slots/route.js.map",
+          "smartpark/.next/server/app/api/(parking)/slots/route.js.nft.json",
+          "smartpark/.next/server/app/api/(parking)/slots/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/slots/route/build-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/slots/route/server-reference-manifest.json",
+          "smartpark/.next/server/app/api/(parking)/slots/route_client-reference-manifest.js",
+          "smartpark/.next/server/app/api/(system)/test/route.js",
+          "smartpark/.next/server/app/api/(system)/test/route.js.map",
+          "smartpark/.next/server/app/api/(system)/test/route.js.nft.json",
+          "smartpark/.next/server/app/api/(system)/test/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/api/(system)/test/route/build-manifest.json",
+          "smartpark/.next/server/app/api/(system)/test/route/server-reference-manifest.json",
+          "smartpark/.next/server/app/api/(system)/test/route_client-reference-manifest.js",
+          "smartpark/.next/server/app/favicon.ico/route.js",
+          "smartpark/.next/server/app/favicon.ico/route.js.map",
+          "smartpark/.next/server/app/favicon.ico/route.js.nft.json",
+          "smartpark/.next/server/app/favicon.ico/route/app-paths-manifest.json",
+          "smartpark/.next/server/app/favicon.ico/route/build-manifest.json",
+          "smartpark/.next/server/chunks/[externals]_next_dist_0arv.vj._.js",
+          "smartpark/.next/server/chunks/[externals]_next_dist_0arv.vj._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__08.91j-._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__08.91j-._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__08bvc9k._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__08bvc9k._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__09_xxhc._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__09_xxhc._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0ak-_vm._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0ak-_vm._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0f5u7.s._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0f5u7.s._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0g-c_1u._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0g-c_1u._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0g_ho0i._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0g_ho0i._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0h0w.uz._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0h0w.uz._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0hywybc._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0hywybc._.js.map",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0j8-xkl._.js",
+          "smartpark/.next/server/chunks/[root-of-the-server]__0j8-xkl._.js.map",
+          "smartpark/.next/server/chunks/[turbopack]_runtime.js",
+          "smartpark/.next/server/chunks/[turbopack]_runtime.js.map",
+          "smartpark/.next/server/chunks/_12t-czy._.js",
+          "smartpark/.next/server/chunks/_12t-czy._.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_config_route_actions_0r8.w57.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_config_route_actions_0r8.w57.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_dashboard_route_actions_0fguke-.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_dashboard_route_actions_0fguke-.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_tickets_route_actions_0e.h3bz.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_tickets_route_actions_0e.h3bz.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_entry_route_actions_0ofv1ns.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_entry_route_actions_0ofv1ns.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_exit_route_actions_0krhk~j.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_exit_route_actions_0krhk~j.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_slots_route_actions_0fx62sy.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(parking)_slots_route_actions_0fx62sy.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(system)_test_route_actions_0s5a5lo.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_api_(system)_test_route_actions_0s5a5lo.js.map",
+          "smartpark/.next/server/chunks/_next-internal_server_app_favicon_ico_route_actions_095lj93.js",
+          "smartpark/.next/server/chunks/_next-internal_server_app_favicon_ico_route_actions_095lj93.js.map",
+          "smartpark/.next/server/chunks/node_modules_bcryptjs_index_0bjz0ul.js",
+          "smartpark/.next/server/chunks/node_modules_bcryptjs_index_0bjz0ul.js.map",
+          "smartpark/.next/server/chunks/node_modules_next_dist_esm_build_templates_app-route_0yubv2d.js",
+          "smartpark/.next/server/chunks/node_modules_next_dist_esm_build_templates_app-route_0yubv2d.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__01jlcs9._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__01jlcs9._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02-zzdk._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02-zzdk._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02hi65f._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02hi65f._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02qu6di._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__02qu6di._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__03hx8rw._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__03hx8rw._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__06-2p1a._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__06-2p1a._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0c03blr._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0c03blr._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0de7ik0._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0de7ik0._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0hrcz1j._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0hrcz1j._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0kl9r5x._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0kl9r5x._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0qi2l6g._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0qi2l6g._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0wcm4yv._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0wcm4yv._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0~953ob._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__0~953ob._.js.map",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__13i5hfp._.js",
+          "smartpark/.next/server/chunks/ssr/[root-of-the-server]__13i5hfp._.js.map",
+          "smartpark/.next/server/chunks/ssr/[turbopack]_runtime.js",
+          "smartpark/.next/server/chunks/ssr/[turbopack]_runtime.js.map",
+          "smartpark/.next/server/chunks/ssr/_077b8kp._.js",
+          "smartpark/.next/server/chunks/ssr/_077b8kp._.js.map",
+          "smartpark/.next/server/chunks/ssr/_0bwuoy1._.js",
+          "smartpark/.next/server/chunks/ssr/_0bwuoy1._.js.map",
+          "smartpark/.next/server/chunks/ssr/_0f9hph-._.js",
+          "smartpark/.next/server/chunks/ssr/_0f9hph-._.js.map",
+          "smartpark/.next/server/chunks/ssr/_0klu4xg._.js",
+          "smartpark/.next/server/chunks/ssr/_0klu4xg._.js.map",
+          "smartpark/.next/server/chunks/ssr/_0vdi~ay._.js",
+          "smartpark/.next/server/chunks/ssr/_0vdi~ay._.js.map",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(admin)_dashboard_page_actions_0txhcuo.js",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(admin)_dashboard_page_actions_0txhcuo.js.map",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(parking)_entry_page_actions_08e4k.6.js",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(parking)_entry_page_actions_08e4k.6.js.map",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(parking)_exit_page_actions_0bzn7pm.js",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(parking)_exit_page_actions_0bzn7pm.js.map",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(site)_page_actions_00k8kul.js",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(site)_page_actions_00k8kul.js.map",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app__global-error_page_actions_0k77kol.js",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app__global-error_page_actions_0k77kol.js.map",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app__not-found_page_actions_0eq97pa.js",
+          "smartpark/.next/server/chunks/ssr/_next-internal_server_app__not-found_page_actions_0eq97pa.js.map",
+          "smartpark/.next/server/chunks/ssr/app_(site)_page_tsx_11ocld5._.js",
+          "smartpark/.next/server/chunks/ssr/app_(site)_page_tsx_11ocld5._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_03alrmj._.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_03alrmj._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_09w7yel._.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_09w7yel._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_0vtdjw7._.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_0vtdjw7._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_html-to-image_es_index_0rqkl87.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_html-to-image_es_index_0rqkl87.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_leaflet_dist_leaflet-src_0t8vne..js",
+          "smartpark/.next/server/chunks/ssr/node_modules_leaflet_dist_leaflet-src_0t8vne..js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_03nkrli._.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_03nkrli._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_03p1s9l._.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_03p1s9l._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_0h9llsw._.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_0h9llsw._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0.gtcj1.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0.gtcj1.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0.vfv08.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0.vfv08.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_002l7yi.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_002l7yi.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_01gpef~.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_01gpef~.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_06x0797.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_06x0797.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0crp9us.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0crp9us.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0g11zwc.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0g11zwc.js.map",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0nsg22r.js",
+          "smartpark/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0nsg22r.js.map",
+          "smartpark/.next/server/interception-route-rewrite-manifest.js",
+          "smartpark/.next/server/middleware-build-manifest.js",
+          "smartpark/.next/server/middleware-manifest.json",
+          "smartpark/.next/server/next-font-manifest.js",
+          "smartpark/.next/server/next-font-manifest.json",
+          "smartpark/.next/server/pages-manifest.json",
+          "smartpark/.next/server/server-reference-manifest.js",
+          "smartpark/.next/server/server-reference-manifest.json",
+          "smartpark/.next/types/routes.d.ts",
+          "smartpark/app/api/(admin)/config/route.ts",
+          "smartpark/app/api/(admin)/dashboard/route.ts",
+          "smartpark/app/api/(admin)/tickets/route.ts",
+          "smartpark/app/api/(parking)/entry/route.ts",
+          "smartpark/app/api/(parking)/exit/route.ts",
+          "smartpark/app/api/(parking)/slots/route.ts",
+          "smartpark/app/api/(system)/test/route.ts",
+          "smartpark/components/RouteGuard.tsx"
+        ],
+        "code_example": "@app.get(\"/api/data\")\n@require_auth\ndef get_data(token: str = Header()): ...",
+        "severity": "critical",
+        "effort": "low"
+      },
+      {
+        "reason": "Unvalidated input flows create SQL injection and command injection vectors",
+        "recommendation": "Implement parameterized queries and schema validation at controller boundaries",
+        "impacted_files": [
+          "smartpark/.next/dev/server/chunks/ssr/node_modules_next_dist_server_route-modules_app-page_0f6k0sl._.js",
+          "smartpark/.next/dev/routes-manifest.json",
+          "smartpark/.next/app-path-routes-manifest.json"
+        ],
+        "code_example": "# Use ORM:\ndb.session.execute(select(User).where(User.id == int(user_id)))\n# NOT string interpolation",
+        "severity": "critical",
+        "effort": "medium"
+      },
+      {
+        "reason": "2 critical privilege issues detected",
+        "recommendation": "Implement role-based access control (RBAC) with consistent enforcement across all sensitive operations",
+        "impacted_files": [],
+        "code_example": "@app.post(\"/admin/users\")\n@require_role(\"admin\")\ndef create_user(): ...",
+        "severity": "critical",
+        "effort": "high"
+      }
+    ],
+    "file_risks": [
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/config/route.js",
+        "risk_score": 80,
+        "issues": [
+          "Sensitive administrative or auth-related file",
+          "Unauthenticated entry point"
+        ],
+        "severity": "critical",
+        "language": "JavaScript"
+      },
+      {
+        "path": "smartpark/.next/server/chunks/_next-internal_server_app_api_(admin)_tickets_route_actions_0e.h3bz.js.map",
+        "risk_score": 80,
+        "issues": [
+          "Sensitive administrative or auth-related file",
+          "Unauthenticated entry point"
+        ],
+        "severity": "critical",
+        "language": "Unknown"
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/dashboard/route/server-reference-manifest.json",
+        "risk_score": 80,
+        "issues": [
+          "Sensitive administrative or auth-related file",
+          "Unauthenticated entry point"
+        ],
+        "severity": "critical",
+        "language": "Unknown"
+      },
+      {
+        "path": "smartpark/.next/server/app/(admin)/dashboard/page_client-reference-manifest.js",
+        "risk_score": 80,
+        "issues": [
+          "Sensitive administrative or auth-related file",
+          "Unauthenticated entry point"
+        ],
+        "severity": "critical",
+        "language": "JavaScript"
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/tickets/route/server-reference-manifest.json",
+        "risk_score": 80,
+        "issues": [
+          "Sensitive administrative or auth-related file",
+          "Unauthenticated entry point"
+        ],
+        "severity": "critical",
+        "language": "Unknown"
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/dashboard/route.js.map",
+        "risk_score": 80,
+        "issues": [
+          "Sensitive administrative or auth-related file",
+          "Unauthenticated entry point"
+        ],
+        "severity": "critical",
+        "language": "Unknown"
+      },
+      {
+        "path": "smartpark/.next/server/chunks/ssr/_next-internal_server_app_(admin)_dashboard_page_actions_0txhcuo.js",
+        "risk_score": 80,
+        "issues": [
+          "Sensitive administrative or auth-related file",
+          "Unauthenticated entry point"
+        ],
+        "severity": "critical",
+        "language": "JavaScript"
+      },
+      {
+        "path": "smartpark/.next/server/app/(admin)/dashboard/page/react-loadable-manifest.json",
+        "risk_score": 80,
+        "issues": [
+          "Sensitive administrative or auth-related file",
+          "Unauthenticated entry point"
+        ],
+        "severity": "critical",
+        "language": "Unknown"
+      },
+      {
+        "path": "smartpark/.next/server/app/api/(admin)/config/route/server-reference-manifest.json",
+        "risk_score": 80,
+        "issues": [
+          "Sensitive administrative or auth-related file",
+          "Unauthenticated entry point"
+        ],
+        "severity": "critical",
+        "language": "Unknown"
+      },
+      {
+        "path": "smartpark/app/api/(admin)/dashboard/route.ts",
+        "risk_score": 80,
+        "issues": [
+          "Sensitive administrative or auth-related file",
+          "Unauthenticated entry point"
+        ],
+        "severity": "critical",
+        "language": "TypeScript"
+      }
+    ],
+    "created_at": "2026-05-17T12:17:12.233007Z"
+  }
+}
