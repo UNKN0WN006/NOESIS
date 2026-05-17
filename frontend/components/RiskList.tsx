@@ -1,3 +1,4 @@
+// RiskList: renders entry points, data flows, and privilege issues with rationale toggles.
 import React, { useState } from 'react'
 import { SeverityBadge } from './SeverityBadge'
 

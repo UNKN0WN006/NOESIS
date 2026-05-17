@@ -1,3 +1,4 @@
+// ArchitectureMap: visual list of architectural components and affected files.
 import React from 'react'
 import { SeverityBadge } from './SeverityBadge'
 

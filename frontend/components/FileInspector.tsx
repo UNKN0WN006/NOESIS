@@ -1,3 +1,4 @@
+// FileInspector: sortable file risk index with quick severity badges.
 import React, { useMemo, useState } from 'react'
 import { SeverityBadge } from './SeverityBadge'
 

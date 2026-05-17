@@ -1,3 +1,4 @@
+// Heatmap: simple, accessible horizontal bars to show per-factor risk.
 import React from 'react'
 
 function formatLabel(key: string) {

@@ -1,5 +1,6 @@
-export const mockAnalysisResult = {
-  session_id: 'mock-001',
+// Sample analysis payload used when live backend results are unavailable.
+export const sampleAnalysisResult = {
+  session_id: 'sample-001',
   repo_url: 'https://github.com/example/vulnerable-app',
   score: 72,
   score_breakdown: {
@@ -7,7 +8,7 @@ export const mockAnalysisResult = {
     authorization: 81,
     input_validation: 55,
     data_exposure: 74,
-    dependency: 62,
+    dependency_risk: 62,
   },
   architecture: [
     { name: 'web', files: ['app.py', 'routes.py'], desc: 'HTTP layer', risk_level: 'high' },
@@ -75,7 +76,7 @@ export const mockAnalysisResult = {
   created_at: '2025-05-16T10:30:00Z',
 }
 
-export const mockLogs = [
+export const sampleLogs = [
   { ts: new Date().toISOString(), level: 'info', message: 'Initializing clone routine...' },
   { ts: new Date().toISOString(), level: 'debug', message: 'Target: vulnerable-app' },
   { ts: new Date().toISOString(), level: 'info', message: 'Running static AST generation...' },

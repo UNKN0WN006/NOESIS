@@ -1,3 +1,4 @@
+// Dashboard page: renders final analysis report and drill-down components.
 import React, { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import { ArchitectureMap } from '../components/ArchitectureMap'
@@ -6,15 +7,15 @@ import { Heatmap } from '../components/Heatmap'
 import { RefactorSuggestion } from '../components/RefactorSuggestion'
 import { RiskList } from '../components/RiskList'
 import { ScoreCard } from '../components/ScoreCard'
-import { mockAnalysisResult } from '../lib/mock-data'
+import { sampleAnalysisResult } from '../lib/sample-data'
 
 export default function Dashboard() {
   const router = useRouter()
-  const [result, setResult] = useState<any>(mockAnalysisResult)
+  const [result, setResult] = useState<any>(sampleAnalysisResult)
 
   const repoUrl = useMemo(() => {
-    if (typeof window === 'undefined') return mockAnalysisResult.repo_url
-    return sessionStorage.getItem('noesis_repo_url') || mockAnalysisResult.repo_url
+    if (typeof window === 'undefined') return sampleAnalysisResult.repo_url
+    return sessionStorage.getItem('noesis_repo_url') || sampleAnalysisResult.repo_url
   }, [])
 
   useEffect(() => {

@@ -1,3 +1,4 @@
+// Loading page: starts analysis, polls progress, and redirects on completion.
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { LogViewer } from '../components/LogViewer'
@@ -17,7 +18,6 @@ export default function LoadingPage() {
   const [error, setError] = useState<string | null>(null)
   const repoUrl = typeof window !== 'undefined' ? sessionStorage.getItem('noesis_repo_url') : null
 
-  // Step 1: Initiate analysis on mount
   useEffect(() => {
     if (!repoUrl || sessionId) return
 
@@ -51,7 +51,6 @@ export default function LoadingPage() {
     initiate()
   }, [repoUrl, sessionId])
 
-  // Step 2: Poll for progress updates
   useEffect(() => {
     if (!sessionId || progress >= 100) return
 
@@ -73,7 +72,6 @@ export default function LoadingPage() {
         setProgress(data.progress)
         setStage(data.stage || 'Processing...')
 
-        // Update logs (only add new ones)
         if (data.log_lines && Array.isArray(data.log_lines)) {
           setLogs(
             data.log_lines.map((log: any) => ({
@@ -86,12 +84,11 @@ export default function LoadingPage() {
       } catch (e: any) {
         console.error('Progress poll error:', e)
       }
-    }, 750) // Poll every 750ms for smooth updates
+    }, 750)
 
     return () => clearInterval(interval)
   }, [sessionId, progress])
 
-  // Step 3: Fetch result and redirect when complete
   useEffect(() => {
     if (progress < 100 || !sessionId) return
 
@@ -100,7 +97,6 @@ export default function LoadingPage() {
         const response = await fetch(`/api/analysis?session_id=${sessionId}&action=result`)
 
         if (response.status === 202) {
-          // Still processing, keep polling
           return
         }
 
@@ -113,7 +109,6 @@ export default function LoadingPage() {
         sessionStorage.setItem('noesis_result', JSON.stringify(result))
         sessionStorage.setItem('noesis_session_id', sessionId)
 
-        // Navigate to dashboard
         await router.push('/dashboard')
       } catch (e: any) {
         setError(`Failed to retrieve results: ${e.message}`)
@@ -143,7 +138,6 @@ export default function LoadingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white p-6">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
         <div className="mb-12">
           <h1 className="text-5xl font-mono font-bold mb-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
             NOESIS
@@ -151,14 +145,12 @@ export default function LoadingPage() {
           <p className="text-slate-400 font-mono">Analyzing repository security architecture...</p>
         </div>
 
-        {/* Progress Section */}
         <div className="mb-8">
           <div className="flex justify-between items-center mb-3">
             <span className="text-sm font-mono text-slate-300">{stage}</span>
             <span className="text-sm font-mono font-bold text-cyan-400">{progress}%</span>
           </div>
 
-          {/* Progress Bar */}
           <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
             <div
               className="h-full bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 rounded-full transition-all duration-300 ease-out shadow-lg shadow-cyan-400/50"
@@ -167,7 +159,6 @@ export default function LoadingPage() {
           </div>
         </div>
 
-        {/* Stats */}
         <div className="grid grid-cols-3 gap-4 mb-8">
           <div className="bg-slate-800/50 border border-slate-700 rounded p-4">
             <div className="text-xs text-slate-400 font-mono mb-1">Status</div>
@@ -185,7 +176,6 @@ export default function LoadingPage() {
           </div>
         </div>
 
-        {/* Live Log Viewer */}
         <div className="bg-slate-800/30 border border-slate-700 rounded-lg p-4">
           <h2 className="text-sm font-mono font-bold text-slate-300 mb-3 uppercase tracking-wider">
             Execution Log
@@ -199,7 +189,6 @@ export default function LoadingPage() {
           />
         </div>
 
-        {/* Footer */}
         {progress === 100 && (
           <div className="mt-8 text-center text-sm text-slate-400 font-mono">
             Analysis complete. Preparing dashboard...

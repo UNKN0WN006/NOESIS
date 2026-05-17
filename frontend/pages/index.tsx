@@ -1,6 +1,7 @@
+// Home page: repository URL intake and analysis session bootstrap.
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
-import { mockAnalysisResult } from '../lib/mock-data'
+import { sampleAnalysisResult } from '../lib/sample-data'
 
 export default function Home() {
   const router = useRouter()
@@ -24,7 +25,7 @@ export default function Home() {
 
     setError('')
     sessionStorage.setItem('noesis_repo_url', repo)
-    sessionStorage.setItem('noesis_preview', JSON.stringify(mockAnalysisResult))
+    sessionStorage.setItem('noesis_preview', JSON.stringify(sampleAnalysisResult))
     await router.push('/loading')
   }
 

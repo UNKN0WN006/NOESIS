@@ -1,3 +1,4 @@
+// RefactorSuggestion: presents an actionable remediation plan with code snippets.
 import React from 'react'
 import { SeverityBadge } from './SeverityBadge'
 

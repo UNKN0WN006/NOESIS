@@ -1,3 +1,4 @@
+// SeverityBadge: small, consistent badge used across the dashboard.
 import React from 'react'
 
 type Severity = 'critical' | 'high' | 'medium' | 'low' | string | null | undefined

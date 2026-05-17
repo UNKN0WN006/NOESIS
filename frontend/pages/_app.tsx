@@ -1,3 +1,4 @@
+// Next.js app shell: loads global styles and page component tree.
 import type { AppProps } from 'next/app'
 import '../styles/globals.css'
 

@@ -1,3 +1,4 @@
+// LogViewer: auto-scrolling execution log with color-coded severity.
 import React, { useEffect, useRef } from 'react'
 
 export interface LogLine {

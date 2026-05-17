@@ -1,22 +1,11 @@
+// API proxy: forwards analysis requests from Next.js to the FastAPI backend.
 import type { NextApiRequest, NextApiResponse } from 'next'
-
-/**
- * POST /api/analysis - Initiate a new repository analysis
- * Returns: { session_id, repo_url, status, created_at }
- * 
- * GET /api/analysis?session_id=xxx&action=progress - Get analysis progress
- * Returns: { session_id, status, progress, stage, log_lines }
- * 
- * GET /api/analysis?session_id=xxx&action=result - Get completed analysis
- * Returns: Full AnalysisResult object
- */
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const backend = process.env.BACKEND_URL || 'http://localhost:8000'
   
   try {
     if (req.method === 'POST') {
-      // Initiate analysis
       const { repo_url } = req.body
       if (!repo_url) {
         return res.status(400).json({ error: 'repo_url is required' })
@@ -54,7 +43,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
       if (progressResponse.status === 202) {
-        // Still processing
         const data = await progressResponse.json()
         return res.status(202).json(data)
       }

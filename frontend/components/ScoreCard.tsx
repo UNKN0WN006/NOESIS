@@ -1,3 +1,5 @@
+// ScoreCard: displays the Exploitability Score and a short severity label.
+// Keep UI logic minimal so the component is easy to review.
 import React from 'react'
 
 export function ScoreCard({ score }: { score: number }) {
